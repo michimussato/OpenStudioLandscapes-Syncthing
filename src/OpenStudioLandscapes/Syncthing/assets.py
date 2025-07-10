@@ -163,8 +163,6 @@ def compose_syncthing(
 
     volumes_dict = {
         "volumes": [
-            f"{env.get('NFS_ENTRY_POINT')}:{env.get('NFS_ENTRY_POINT')}",
-            f"{env.get('NFS_ENTRY_POINT')}:{env.get('NFS_ENTRY_POINT_LNS')}",
         ]
     }
 
