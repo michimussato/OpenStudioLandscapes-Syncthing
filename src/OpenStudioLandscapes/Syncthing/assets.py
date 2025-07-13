@@ -16,6 +16,7 @@ from dagster import (
 
 from OpenStudioLandscapes.engine.constants import *
 from OpenStudioLandscapes.engine.enums import *
+from OpenStudioLandscapes.engine.utils import *
 
 from OpenStudioLandscapes.Syncthing.constants import *
 
@@ -153,9 +154,9 @@ def compose_syncthing(
         ports_dict = {
             "ports": [
                 f"{env.get('SYNCTHING_PORT_HOST')}:{env.get('SYNCTHING_PORT_CONTAINER')}",  # Web UI
-                "22000:22000/tcp",  # TCP file transfers
-                "22000:22000/udp",  # QUIC file transfers
-                "21027:21027/udp",  # Receive local discovery broadcasts
+                f"{env.get('SYNCTHING_TCP_PORT_HOST')}:{env.get('SYNCTHING_TCP_PORT_CONTAINER')}/tcp",  # TCP file transfers
+                f"{env.get('SYNCTHING_UDP_PORT_HOST')}:{env.get('SYNCTHING_UDP_PORT_CONTAINER')}/udp",  # QUIC file transfers
+                f"{env.get('SYNCTHING_DISCOVERY_PORT_HOST')}:{env.get('SYNCTHING_DISCOVERY_PORT_CONTAINER')}/udp",  # Receive local discovery broadcasts
             ]
         }
     elif "network_mode" in compose_networks:
@@ -175,6 +176,31 @@ def compose_syncthing(
             0,
             f"{syncthing_config_dir_host.as_posix()}:/var/syncthing",
         )
+
+    # For portability, convert absolute volume paths to relative paths
+
+    _volume_relative = []
+
+    for v in volumes_dict["volumes"]:
+
+        host, container = v.split(":", maxsplit=1)
+
+        volume_dir_host_rel_path = get_relative_path_via_common_root(
+            context=context,
+            path_src=pathlib.Path(env["DOCKER_COMPOSE"]),
+            path_dst=pathlib.Path(host),
+            path_common_root=pathlib.Path(env["DOT_LANDSCAPES"]),
+        )
+
+        _volume_relative.append(
+            f"{volume_dir_host_rel_path.as_posix()}:{container}",
+        )
+
+    volumes_dict = {
+        "volumes": [
+            *_volume_relative,
+        ]
+    }
 
     service_name = "syncthing"
     container_name = "--".join([service_name, env.get("LANDSCAPE", "default")])
