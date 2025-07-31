@@ -186,12 +186,18 @@ The following variables are being declared in `OpenStudioLandscapes.Syncthing.co
 
 #### Feature Config: default
 
-| Variable                   | Type   | Value                                                              |
-| :------------------------- | :----- | :----------------------------------------------------------------- |
-| `DOCKER_USE_CACHE`         | `bool` | `False`                                                            |
-| `SYNCTHING_PORT_HOST`      | `str`  | `8787`                                                             |
-| `SYNCTHING_PORT_CONTAINER` | `str`  | `8384`                                                             |
-| `SYNCTHING_CONFIG_DIR`     | `str`  | `{DOT_LANDSCAPES}/{LANDSCAPE}/Syncthing__Syncthing/data/syncthing` |
+| Variable                             | Type   | Value                                                              |
+| :----------------------------------- | :----- | :----------------------------------------------------------------- |
+| `DOCKER_USE_CACHE`                   | `bool` | `False`                                                            |
+| `SYNCTHING_PORT_HOST`                | `str`  | `8787`                                                             |
+| `SYNCTHING_PORT_CONTAINER`           | `str`  | `8384`                                                             |
+| `SYNCTHING_TCP_PORT_HOST`            | `str`  | `22022`                                                            |
+| `SYNCTHING_TCP_PORT_CONTAINER`       | `str`  | `22000`                                                            |
+| `SYNCTHING_UDP_PORT_HOST`            | `str`  | `22022`                                                            |
+| `SYNCTHING_UDP_PORT_CONTAINER`       | `str`  | `22000`                                                            |
+| `SYNCTHING_DISCOVERY_PORT_HOST`      | `str`  | `22027`                                                            |
+| `SYNCTHING_DISCOVERY_PORT_CONTAINER` | `str`  | `21027`                                                            |
+| `SYNCTHING_CONFIG_DIR`               | `str`  | `{DOT_LANDSCAPES}/{LANDSCAPE}/Syncthing__Syncthing/data/syncthing` |
 
 # Community
 
