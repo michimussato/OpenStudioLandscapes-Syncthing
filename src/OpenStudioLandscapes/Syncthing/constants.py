@@ -41,7 +41,13 @@ FEATURE_CONFIGS = {
     OpenStudioLandscapesConfig.DEFAULT: {
         "DOCKER_USE_CACHE": DOCKER_USE_CACHE,
         "SYNCTHING_PORT_HOST": "8787",
-        "SYNCTHING_PORT_CONTAINER": "8384",
+        "SYNCTHING_PORT_CONTAINER": "8384",  # Default: 8384
+        "SYNCTHING_TCP_PORT_HOST": "22022",
+        "SYNCTHING_TCP_PORT_CONTAINER": "22000",  # Default: 22000
+        "SYNCTHING_UDP_PORT_HOST": "22022",
+        "SYNCTHING_UDP_PORT_CONTAINER": "22000",  # Default: 22000
+        "SYNCTHING_DISCOVERY_PORT_HOST": "22027",
+        "SYNCTHING_DISCOVERY_PORT_CONTAINER": "21027",  # Default: 21027
         "SYNCTHING_CONFIG_DIR": {
             #################################################################
             # Syncthing config dir will be created in (hardcoded):
@@ -59,26 +65,6 @@ FEATURE_CONFIGS = {
                 "syncthing",
             ).as_posix(),
         }["default"],
-        # "GRAFANA_PORT_HOST": "3030",
-        # "GRAFANA_PORT_CONTAINER": "3030",
-        # "GRAFANA_GRAFANA_INI": pathlib.Path(
-        #     get_git_root(pathlib.Path(__file__)),
-        #     "configs",
-        #     *KEY,
-        #     "etc",
-        #     "grafana",
-        #     "grafana.ini",
-        # ).as_posix(),
-        # "GRAFANA_DEFAULTS_INI": pathlib.Path(
-        #     get_git_root(pathlib.Path(__file__)),
-        #     "configs",
-        #     *KEY,
-        #     "usr",
-        #     "share",
-        #     "grafana",
-        #     "conf",
-        #     "defaults.ini",
-        # ).as_posix(),
     }
 }
 # @formatter:on

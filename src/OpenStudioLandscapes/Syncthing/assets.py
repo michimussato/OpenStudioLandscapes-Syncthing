@@ -1,7 +1,7 @@
 import copy
 import json
 import pathlib
-from typing import Generator
+from typing import Generator, Any
 
 import yaml
 from dagster import (
@@ -16,6 +16,7 @@ from dagster import (
 
 from OpenStudioLandscapes.engine.constants import *
 from OpenStudioLandscapes.engine.enums import *
+from OpenStudioLandscapes.engine.utils import *
 
 from OpenStudioLandscapes.Syncthing.constants import *
 
@@ -153,9 +154,9 @@ def compose_syncthing(
         ports_dict = {
             "ports": [
                 f"{env.get('SYNCTHING_PORT_HOST')}:{env.get('SYNCTHING_PORT_CONTAINER')}",  # Web UI
-                "22000:22000/tcp",  # TCP file transfers
-                "22000:22000/udp",  # QUIC file transfers
-                "21027:21027/udp",  # Receive local discovery broadcasts
+                f"{env.get('SYNCTHING_TCP_PORT_HOST')}:{env.get('SYNCTHING_TCP_PORT_CONTAINER')}/tcp",  # TCP file transfers
+                f"{env.get('SYNCTHING_UDP_PORT_HOST')}:{env.get('SYNCTHING_UDP_PORT_CONTAINER')}/udp",  # QUIC file transfers
+                f"{env.get('SYNCTHING_DISCOVERY_PORT_HOST')}:{env.get('SYNCTHING_DISCOVERY_PORT_CONTAINER')}/udp",  # Receive local discovery broadcasts
             ]
         }
     elif "network_mode" in compose_networks:
@@ -175,6 +176,31 @@ def compose_syncthing(
             0,
             f"{syncthing_config_dir_host.as_posix()}:/var/syncthing",
         )
+
+    # For portability, convert absolute volume paths to relative paths
+
+    _volume_relative = []
+
+    for v in volumes_dict["volumes"]:
+
+        host, container = v.split(":", maxsplit=1)
+
+        volume_dir_host_rel_path = get_relative_path_via_common_root(
+            context=context,
+            path_src=pathlib.Path(env["DOCKER_COMPOSE"]),
+            path_dst=pathlib.Path(host),
+            path_common_root=pathlib.Path(env["DOT_LANDSCAPES"]),
+        )
+
+        _volume_relative.append(
+            f"{volume_dir_host_rel_path.as_posix()}:{container}",
+        )
+
+    volumes_dict = {
+        "volumes": [
+            *_volume_relative,
+        ]
+    }
 
     service_name = "syncthing"
     container_name = "--".join([service_name, env.get("LANDSCAPE", "default")])
@@ -245,6 +271,51 @@ def compose_maps(
     ret = list(kwargs.values())
 
     context.log.info(ret)
+
+    yield Output(ret)
+
+    yield AssetMaterialization(
+        asset_key=context.asset_key,
+        metadata={
+            "__".join(context.asset_key.path): MetadataValue.json(ret),
+        },
+    )
+
+
+@asset(
+    **ASSET_HEADER,
+    ins={
+    },
+)
+def cmd_extend(
+        context: AssetExecutionContext,
+) -> Generator[Output[list[Any]] | AssetMaterialization | Any, Any, None]:
+
+    ret = []
+
+    yield Output(ret)
+
+    yield AssetMaterialization(
+        asset_key=context.asset_key,
+        metadata={
+            "__".join(context.asset_key.path): MetadataValue.json(ret),
+        },
+    )
+
+
+@asset(
+    **ASSET_HEADER,
+    ins={
+    },
+)
+def cmd_append(
+        context: AssetExecutionContext,
+) -> Generator[Output[dict[str, list[Any]]] | AssetMaterialization | Any, Any, None]:
+
+    ret = {
+        "cmd": [],
+        "exclude_from_quote": []
+    }
 
     yield Output(ret)
 
