@@ -202,7 +202,7 @@ def compose_syncthing(
 
     service_name = "syncthing"
     container_name = "--".join([service_name, env.get("LANDSCAPE", "default")])
-    host_name = ".".join([service_name, env["ROOT_DOMAIN"]])
+    host_name = ".".join([env["SYNCTHING_HOSTNAME"] or service_name, env["ROOT_DOMAIN"]])
 
     docker_dict = {
         "services": {
