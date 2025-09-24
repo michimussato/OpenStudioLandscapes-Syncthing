@@ -202,14 +202,14 @@ def compose_syncthing(
 
     service_name = "syncthing"
     container_name = "--".join([service_name, env.get("LANDSCAPE", "default")])
-    host_name = ".".join([env["SYNCTHING_HOSTNAME"] or service_name, env["ROOT_DOMAIN"]])
+    host_name = ".".join([env["HOSTNAME"] or service_name, env["OPENSTUDIOLANDSCAPES__DOMAIN_LAN"]])
 
     docker_dict = {
         "services": {
             service_name: {
                 "container_name": container_name,
                 "hostname": host_name,
-                "domainname": env.get("ROOT_DOMAIN"),
+                "domainname": env.get("OPENSTUDIOLANDSCAPES__DOMAIN_LAN"),
                 # "restart": "always",
                 "image": "docker.io/syncthing/syncthing",
                 "restart": "unless-stopped",

@@ -40,7 +40,9 @@ ASSET_HEADER = {
 FEATURE_CONFIGS = {
     OpenStudioLandscapesConfig.DEFAULT: {
         "DOCKER_USE_CACHE": DOCKER_USE_CACHE,
-        "SYNCTHING_HOSTNAME": "syncthing",
+        "HOSTNAME": "syncthing",
+        "TELEPORT_ENTRY_POINT_HOST": "{{HOSTNAME}}",  # Either a hardcoded str or a ref to a Variable (with double {{ }}!)
+        "TELEPORT_ENTRY_POINT_PORT": "{{SYNCTHING_PORT_HOST}}",  # Either a hardcoded str or a ref to a Variable (with double {{ }}!)
         "SYNCTHING_PORT_HOST": "8787",
         "SYNCTHING_PORT_CONTAINER": "8384",  # Default: 8384
         "SYNCTHING_TCP_PORT_HOST": "22022",
@@ -66,8 +68,6 @@ FEATURE_CONFIGS = {
                 "syncthing",
             ).as_posix(),
         }["default"],
-        "TELEPORT_ENTRY_POINT_HOST": "{{SYNCTHING_HOSTNAME}}",  # Either a hardcoded str or a ref to a Variable (with double {{ }}!)
-        "TELEPORT_ENTRY_POINT_PORT": "{{SYNCTHING_PORT_HOST}}",  # Either a hardcoded str or a ref to a Variable (with double {{ }}!)
     }
 }
 # @formatter:on
