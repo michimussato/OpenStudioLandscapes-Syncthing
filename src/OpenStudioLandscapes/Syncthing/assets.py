@@ -154,20 +154,20 @@ def compose_syncthing(
         network_dict = {"networks": list(compose_networks.get("networks", {}).keys())}
         ports_dict = {
             "ports": [
-                f"{env.get('SYNCTHING_PORT_HOST')}:{env.get('SYNCTHING_PORT_CONTAINER')}",  # Web UI
-                f"{env.get('SYNCTHING_TCP_PORT_HOST')}:{env.get('SYNCTHING_TCP_PORT_CONTAINER')}/tcp",  # TCP file transfers
-                f"{env.get('SYNCTHING_UDP_PORT_HOST')}:{env.get('SYNCTHING_UDP_PORT_CONTAINER')}/udp",  # QUIC file transfers
-                f"{env.get('SYNCTHING_DISCOVERY_PORT_HOST')}:{env.get('SYNCTHING_DISCOVERY_PORT_CONTAINER')}/udp",  # Receive local discovery broadcasts
+                f"{env['SYNCTHING_PORT_HOST']}:{env['SYNCTHING_PORT_CONTAINER']}",  # Web UI
+                f"{env['SYNCTHING_TCP_PORT_HOST']}:{env['SYNCTHING_TCP_PORT_CONTAINER']}/tcp",  # TCP file transfers
+                f"{env['SYNCTHING_UDP_PORT_HOST']}:{env['SYNCTHING_UDP_PORT_CONTAINER']}/udp",  # QUIC file transfers
+                f"{env['SYNCTHING_DISCOVERY_PORT_HOST']}:{env['SYNCTHING_DISCOVERY_PORT_CONTAINER']}/udp",  # Receive local discovery broadcasts
             ]
         }
     elif "network_mode" in compose_networks:
-        network_dict = {"network_mode": compose_networks.get("network_mode")}
+        network_dict = {"network_mode": compose_networks["network_mode"]}
 
     volumes_dict = {"volumes": []}
 
     if not SYNCTHING_CONFIG_INSIDE_CONTAINER:
 
-        syncthing_config_dir_host = pathlib.Path(env.get("SYNCTHING_CONFIG_DIR"))
+        syncthing_config_dir_host = pathlib.Path(env["SYNCTHING_CONFIG_DIR"])
         syncthing_config_dir_host.mkdir(parents=True, exist_ok=True)
 
         volumes_dict["volumes"].insert(
@@ -211,7 +211,7 @@ def compose_syncthing(
             service_name: {
                 "container_name": container_name,
                 "hostname": host_name,
-                "domainname": env.get("OPENSTUDIOLANDSCAPES__DOMAIN_LAN"),
+                "domainname": env["OPENSTUDIOLANDSCAPES__DOMAIN_LAN"],
                 # "restart": "always",
                 "image": "docker.io/syncthing/syncthing",
                 "restart": "unless-stopped",
