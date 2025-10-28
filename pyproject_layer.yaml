@@ -1,0 +1,24 @@
+project:
+  description: Syncthing Feature for OpenStudioLandscapes
+  name: OpenStudioLandscapes-Syncthing
+  optional-dependencies:
+    dev:
+    - OpenStudioLandscapes-Syncthing[testing]
+    - OpenStudioLandscapes-Syncthing[lint]
+    - OpenStudioLandscapes-Syncthing[nox]
+    - OpenStudioLandscapes-Syncthing[sbom]
+    - OpenStudioLandscapes-Syncthing[coverage]
+    - OpenStudioLandscapes-Syncthing[readme]
+    nox:
+    - OpenStudioLandscapes-Syncthing[testing]
+    sbom:
+    - OpenStudioLandscapes-Syncthing[graphviz]
+  urls:
+    Homepage: https://github.com/michimussato/OpenStudioLandscapes-Syncthing
+tool:
+  dagster:
+    code_location_name: OpenStudioLandscapes-Syncthing
+    module_name: OpenStudioLandscapes.Syncthing.definitions
+  setuptools:
+    packages:
+    - OpenStudioLandscapes.Syncthing
