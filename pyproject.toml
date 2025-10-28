@@ -94,9 +94,13 @@ code_location_name = "OpenStudioLandscapes-Syncthing"
 module_name = "OpenStudioLandscapes.Syncthing.definitions"
 
 [tool.setuptools]
+include-package-data = true
 packages = [
     "OpenStudioLandscapes.Syncthing",
 ]
 platforms = [
     "Linux",
 ]
+
+[tool.setuptools.package-dir]
+"" = "src"
