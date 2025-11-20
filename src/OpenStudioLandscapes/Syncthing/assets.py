@@ -96,9 +96,9 @@ def compose_networks(
     # https://github.com/syncthing/syncthing/blob/main/README-Docker.md#discovery
     # for host mode, set
     # compose_network_mode = ComposeNetworkMode.HOST
-    compose_network_mode = ComposeNetworkMode.DEFAULT
+    compose_network_mode = DockerComposePolicies.NETWORK_MODE.DEFAULT
 
-    if compose_network_mode == ComposeNetworkMode.DEFAULT:
+    if compose_network_mode is DockerComposePolicies.NETWORK_MODE.DEFAULT:
         docker_dict = {
             "networks": {
                 "syncthing": {
@@ -212,9 +212,9 @@ def compose_syncthing(
                 "container_name": container_name,
                 "hostname": host_name,
                 "domainname": env["OPENSTUDIOLANDSCAPES__DOMAIN_LAN"],
-                # "restart": "always",
+                # "restart": DockerComposePolicies.RESTART_POLICY.ALWAYS.value,
                 "image": "docker.io/syncthing/syncthing",
-                "restart": "unless-stopped",
+                "restart": DockerComposePolicies.RESTART_POLICY.UNLESS_STOPPED.value,
                 "environment": {
                     "PUID": "1000",
                     "PGID": "1000",
