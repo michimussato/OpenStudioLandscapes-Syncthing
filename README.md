@@ -168,9 +168,6 @@ The following variables are being declared in `OpenStudioLandscapes.Syncthing.co
 | Variable                             | Type   | Value                                                              |
 | :----------------------------------- | :----- | :----------------------------------------------------------------- |
 | `DOCKER_USE_CACHE`                   | `bool` | `False`                                                            |
-| `HOSTNAME`                           | `str`  | `syncthing`                                                        |
-| `TELEPORT_ENTRY_POINT_HOST`          | `str`  | `{{HOSTNAME}}`                                                     |
-| `TELEPORT_ENTRY_POINT_PORT`          | `str`  | `{{SYNCTHING_PORT_HOST}}`                                          |
 | `SYNCTHING_PORT_HOST`                | `str`  | `8787`                                                             |
 | `SYNCTHING_PORT_CONTAINER`           | `str`  | `8384`                                                             |
 | `SYNCTHING_TCP_PORT_HOST`            | `str`  | `22022`                                                            |
