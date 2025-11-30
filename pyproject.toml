@@ -49,7 +49,6 @@ dev = [
     "OpenStudioLandscapes-Syncthing[readme]",
     "OpenStudioLandscapes-Syncthing[sbom]",
     "OpenStudioLandscapes-Syncthing[testing]",
-    "dagster-webserver==1.9.11",
 ]
 graphviz = [
     "graphviz",
