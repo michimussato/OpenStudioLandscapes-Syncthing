@@ -1,0 +1,22 @@
+# Base Information
+group_name: "OpenStudioLandscapes_Syncthing"
+key_prefixes:
+  - "OpenStudioLandscapes_Syncthing"
+
+compose_scope: "default"
+
+#syncthing_config_dir: "{DOT_LANDSCAPES}/{LANDSCAPE}/{FEATURE}/data/syncthing"
+
+#syncthing_port_host: 8787
+#syncthing_port_container: 8384
+
+#syncthing_tcp_port_host: 22022
+#syncthing_tcp_port_container: 22000
+
+#syncthing_udp_port_host: 22022
+#syncthing_udp_port_container: 22000
+
+#syncthing_discovery_port_host: 22027
+#syncthing_discovery_port_container: 21027
+
+#syncthing_image: "docker.io/syncthing/syncthing"
