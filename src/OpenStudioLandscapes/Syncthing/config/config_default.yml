@@ -3,7 +3,9 @@ group_name: "OpenStudioLandscapes_Syncthing"
 key_prefixes:
   - "OpenStudioLandscapes_Syncthing"
 
-compose_scope: "default"
+#compose_scope: "default"
+
+#enabled: true
 
 #syncthing_config_dir: "{DOT_LANDSCAPES}/{LANDSCAPE}/{FEATURE}/data/syncthing"
 
