@@ -23,9 +23,7 @@ class Config(FeatureBaseModel):
     definitions: str = "OpenStudioLandscapes.Syncthing.definitions"
 
     syncthing_config_dir: pathlib.Path = Field(
-        default=pathlib.Path(
-            "{DOT_LANDSCAPES}/{LANDSCAPE}/{FEATURE}/data/syncthing"
-        ),
+        default=pathlib.Path("{DOT_LANDSCAPES}/{LANDSCAPE}/{FEATURE}/data/syncthing"),
         description="The path to the `docker-compose.yml` file.",
     )
 
