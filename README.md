@@ -62,10 +62,17 @@ The following settings are available in `OpenStudioLandscapes-Syncthing` and are
 #
 # Type: typing.Dict
 # Base Class:
+#     Required: False
 #     Description:
 #         None
 #     Default value:
 #         None
+# Description:
+#     None
+# Required: False
+#     None
+# Examples:
+#     None
 
 
 # =============
@@ -74,10 +81,17 @@ The following settings are available in `OpenStudioLandscapes-Syncthing` and are
 #
 # Type: <class 'OpenStudioLandscapes.engine.config.models.ConfigEngine'>
 # Base Class:
+#     Required: False
 #     Description:
 #         None
 #     Default value:
 #         None
+# Description:
+#     None
+# Required: False
+#     None
+# Examples:
+#     None
 
 
 # =============
@@ -86,10 +100,17 @@ The following settings are available in `OpenStudioLandscapes-Syncthing` and are
 #
 # Type: <class 'OpenStudioLandscapes.engine.config.models.FeatureBaseModel'>
 # Base Class:
+#     Required: False
 #     Description:
 #         None
 #     Default value:
 #         None
+# Description:
+#     None
+# Required: False
+#     None
+# Examples:
+#     None
 
 
 # ============
@@ -98,10 +119,17 @@ The following settings are available in `OpenStudioLandscapes-Syncthing` and are
 #
 # Type: <class 'importlib.metadata.Distribution'>
 # Base Class:
+#     Required: False
 #     Description:
 #         None
 #     Default value:
 #         None
+# Description:
+#     None
+# Required: False
+#     None
+# Examples:
+#     None
 
 
 # ==========
@@ -110,10 +138,17 @@ The following settings are available in `OpenStudioLandscapes-Syncthing` and are
 #
 # Type: <class 'str'>
 # Base Class:
+#     Required: False
 #     Description:
 #         None
 #     Default value:
 #         None
+# Description:
+#     None
+# Required: False
+#     None
+# Examples:
+#     None
 
 
 # ============
@@ -122,10 +157,17 @@ The following settings are available in `OpenStudioLandscapes-Syncthing` and are
 #
 # Type: typing.List[str]
 # Base Class:
+#     Required: False
 #     Description:
 #         None
 #     Default value:
 #         None
+# Description:
+#     None
+# Required: False
+#     None
+# Examples:
+#     None
 
 
 # =======
@@ -134,10 +176,17 @@ The following settings are available in `OpenStudioLandscapes-Syncthing` and are
 #
 # Type: <class 'bool'>
 # Base Class:
+#     Required: False
 #     Description:
 #         Whether the Feature is enabled or not.
 #     Default value:
 #         True
+# Description:
+#     Whether the Feature is enabled or not.
+# Required: False
+#     Whether the Feature is enabled or not.
+# Examples:
+#     None
 
 
 # =============
@@ -146,10 +195,17 @@ The following settings are available in `OpenStudioLandscapes-Syncthing` and are
 #
 # Type: <class 'str'>
 # Base Class:
+#     Required: False
 #     Description:
 #         None
 #     Default value:
 #         default
+# Description:
+#     None
+# Required: False
+#     None
+# Examples:
+#     ['default', 'license_server', 'worker']
 
 
 # ============
@@ -158,10 +214,17 @@ The following settings are available in `OpenStudioLandscapes-Syncthing` and are
 #
 # Type: <class 'str'>
 # Base Class:
+#     Required: True
 #     Description:
 #         The name of the feature. It is derived from the `OpenStudioLandscapes.<Feature>.dist` attribute.
 #     Default value:
 #         PydanticUndefined
+# Description:
+#     None
+# Required: False
+#     None
+# Examples:
+#     None
 feature_name: OpenStudioLandscapes-Syncthing
 
 
@@ -171,10 +234,17 @@ feature_name: OpenStudioLandscapes-Syncthing
 #
 # Type: <class 'pathlib.Path'>
 # Base Class:
+#     Required: False
 #     Description:
 #         The path to the `docker-compose.yml` file.
 #     Default value:
 #         {DOT_LANDSCAPES}/{LANDSCAPE}/{FEATURE}/docker_compose/docker-compose.yml
+# Description:
+#     The path to the `docker-compose.yml` file.
+# Required: False
+#     The path to the `docker-compose.yml` file.
+# Examples:
+#     None
 
 
 # ====================
@@ -182,7 +252,9 @@ feature_name: OpenStudioLandscapes-Syncthing
 # --------------------
 #
 # Type: <class 'pathlib.Path'>
-# Sub Class Description:
+# Description:
+#     The path to the `docker-compose.yml` file.
+# Required: False
 #     The path to the `docker-compose.yml` file.
 # Examples:
 #     None
@@ -194,7 +266,9 @@ syncthing_config_dir: '{DOT_LANDSCAPES}/{LANDSCAPE}/{FEATURE}/data/syncthing'
 # -------------------
 #
 # Type: <class 'int'>
-# Sub Class Description:
+# Description:
+#     The Syncthing host port.
+# Required: False
 #     The Syncthing host port.
 # Examples:
 #     None
@@ -206,7 +280,9 @@ syncthing_port_host: 8787
 # ------------------------
 #
 # Type: <class 'int'>
-# Sub Class Description:
+# Description:
+#     The Syncthing container port.
+# Required: False
 #     The Syncthing container port.
 # Examples:
 #     None
@@ -218,7 +294,9 @@ syncthing_port_container: 8384
 # -----------------------
 #
 # Type: <class 'int'>
-# Sub Class Description:
+# Description:
+#     The Syncthing TCP host port.
+# Required: False
 #     The Syncthing TCP host port.
 # Examples:
 #     None
@@ -230,7 +308,9 @@ syncthing_tcp_port_host: 22022
 # ----------------------------
 #
 # Type: <class 'int'>
-# Sub Class Description:
+# Description:
+#     The Syncthing TCP container port.
+# Required: False
 #     The Syncthing TCP container port.
 # Examples:
 #     None
@@ -242,7 +322,9 @@ syncthing_tcp_port_container: 22000
 # -----------------------
 #
 # Type: <class 'int'>
-# Sub Class Description:
+# Description:
+#     The Syncthing UDP host port.
+# Required: False
 #     The Syncthing UDP host port.
 # Examples:
 #     None
@@ -254,7 +336,9 @@ syncthing_udp_port_host: 22022
 # ----------------------------
 #
 # Type: <class 'int'>
-# Sub Class Description:
+# Description:
+#     The Syncthing UDP container port.
+# Required: False
 #     The Syncthing UDP container port.
 # Examples:
 #     None
@@ -266,7 +350,9 @@ syncthing_udp_port_container: 22000
 # -----------------------------
 #
 # Type: <class 'int'>
-# Sub Class Description:
+# Description:
+#     The Syncthing discovery host port.
+# Required: False
 #     The Syncthing discovery host port.
 # Examples:
 #     None
@@ -278,7 +364,9 @@ syncthing_discovery_port_host: 22027
 # ----------------------------------
 #
 # Type: <class 'int'>
-# Sub Class Description:
+# Description:
+#     The Syncthing discovery container port.
+# Required: False
 #     The Syncthing discovery container port.
 # Examples:
 #     None
@@ -290,7 +378,9 @@ syncthing_discovery_port_container: 21027
 # ---------------
 #
 # Type: <class 'str'>
-# Sub Class Description:
+# Description:
+#     The Syncthing Docker image.
+# Required: False
 #     The Syncthing Docker image.
 # Examples:
 #     None
@@ -423,4 +513,4 @@ Currently, the following Python interpreters are enabled for testing:
 
 ***
 
-Last changed: **2025-12-23 12:26:20 UTC**
+Last changed: **2025-12-23 12:48:42 UTC**
