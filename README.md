@@ -395,9 +395,6 @@ syncthing_discovery_port_container: 21027
 # Examples:
 #     None
 syncthing_image: docker.io/syncthing/syncthing
-
-
-
 ```
 
 ***
@@ -523,4 +520,4 @@ Currently, the following Python interpreters are enabled for testing:
 
 ***
 
-Last changed: **2025-12-23 13:35:04 UTC**
+Last changed: **2025-12-23 13:37:25 UTC**
