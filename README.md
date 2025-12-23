@@ -56,30 +56,247 @@ A local config store location will be created if it doesn't exist, together with
 The following settings are available in `OpenStudioLandscapes-Syncthing` and are accessible throughout the [`OpenStudioLandscapes-Syncthing`](https://github.com/michimussato/OpenStudioLandscapes-Syncthing/tree/main/OpenStudioLandscapes/Syncthing/config/models.py) package.
 
 ```yaml
-# Base Information
-group_name: "OpenStudioLandscapes_Syncthing"
-key_prefixes:
-  - "OpenStudioLandscapes_Syncthing"
+# ===
+# env
+# ---
+#
+# Type: typing.Dict
+# Base Class:
+#     Description:
+#         None
+#     Default value:
+#         None
 
-#compose_scope: "default"
 
-#enabled: true
+# =============
+# config_engine
+# -------------
+#
+# Type: <class 'OpenStudioLandscapes.engine.config.models.ConfigEngine'>
+# Base Class:
+#     Description:
+#         None
+#     Default value:
+#         None
 
-#syncthing_config_dir: "{DOT_LANDSCAPES}/{LANDSCAPE}/{FEATURE}/data/syncthing"
 
-#syncthing_port_host: 8787
-#syncthing_port_container: 8384
+# =============
+# config_parent
+# -------------
+#
+# Type: <class 'OpenStudioLandscapes.engine.config.models.FeatureBaseModel'>
+# Base Class:
+#     Description:
+#         None
+#     Default value:
+#         None
 
-#syncthing_tcp_port_host: 22022
-#syncthing_tcp_port_container: 22000
 
-#syncthing_udp_port_host: 22022
-#syncthing_udp_port_container: 22000
+# ============
+# distribution
+# ------------
+#
+# Type: <class 'importlib.metadata.Distribution'>
+# Base Class:
+#     Description:
+#         None
+#     Default value:
+#         None
 
-#syncthing_discovery_port_host: 22027
-#syncthing_discovery_port_container: 21027
 
-#syncthing_image: "docker.io/syncthing/syncthing"
+# ==========
+# group_name
+# ----------
+#
+# Type: <class 'str'>
+# Base Class:
+#     Description:
+#         None
+#     Default value:
+#         None
+
+
+# ============
+# key_prefixes
+# ------------
+#
+# Type: typing.List[str]
+# Base Class:
+#     Description:
+#         None
+#     Default value:
+#         None
+
+
+# =======
+# enabled
+# -------
+#
+# Type: <class 'bool'>
+# Base Class:
+#     Description:
+#         Whether the Feature is enabled or not.
+#     Default value:
+#         True
+
+
+# =============
+# compose_scope
+# -------------
+#
+# Type: <class 'str'>
+# Base Class:
+#     Description:
+#         None
+#     Default value:
+#         default
+
+
+# ============
+# feature_name
+# ------------
+#
+# Type: <class 'str'>
+# Base Class:
+#     Description:
+#         The name of the feature. It is derived from the `OpenStudioLandscapes.<Feature>.dist` attribute.
+#     Default value:
+#         PydanticUndefined
+feature_name: OpenStudioLandscapes-Syncthing
+
+
+# ==============
+# docker_compose
+# --------------
+#
+# Type: <class 'pathlib.Path'>
+# Base Class:
+#     Description:
+#         The path to the `docker-compose.yml` file.
+#     Default value:
+#         {DOT_LANDSCAPES}/{LANDSCAPE}/{FEATURE}/docker_compose/docker-compose.yml
+
+
+# ====================
+# syncthing_config_dir
+# --------------------
+#
+# Type: <class 'pathlib.Path'>
+# Sub Class Description:
+#     The path to the `docker-compose.yml` file.
+# Examples:
+#     None
+syncthing_config_dir: '{DOT_LANDSCAPES}/{LANDSCAPE}/{FEATURE}/data/syncthing'
+
+
+# ===================
+# syncthing_port_host
+# -------------------
+#
+# Type: <class 'int'>
+# Sub Class Description:
+#     The Syncthing host port.
+# Examples:
+#     None
+syncthing_port_host: 8787
+
+
+# ========================
+# syncthing_port_container
+# ------------------------
+#
+# Type: <class 'int'>
+# Sub Class Description:
+#     The Syncthing container port.
+# Examples:
+#     None
+syncthing_port_container: 8384
+
+
+# =======================
+# syncthing_tcp_port_host
+# -----------------------
+#
+# Type: <class 'int'>
+# Sub Class Description:
+#     The Syncthing TCP host port.
+# Examples:
+#     None
+syncthing_tcp_port_host: 22022
+
+
+# ============================
+# syncthing_tcp_port_container
+# ----------------------------
+#
+# Type: <class 'int'>
+# Sub Class Description:
+#     The Syncthing TCP container port.
+# Examples:
+#     None
+syncthing_tcp_port_container: 22000
+
+
+# =======================
+# syncthing_udp_port_host
+# -----------------------
+#
+# Type: <class 'int'>
+# Sub Class Description:
+#     The Syncthing UDP host port.
+# Examples:
+#     None
+syncthing_udp_port_host: 22022
+
+
+# ============================
+# syncthing_udp_port_container
+# ----------------------------
+#
+# Type: <class 'int'>
+# Sub Class Description:
+#     The Syncthing UDP container port.
+# Examples:
+#     None
+syncthing_udp_port_container: 22000
+
+
+# =============================
+# syncthing_discovery_port_host
+# -----------------------------
+#
+# Type: <class 'int'>
+# Sub Class Description:
+#     The Syncthing discovery host port.
+# Examples:
+#     None
+syncthing_discovery_port_host: 22027
+
+
+# ==================================
+# syncthing_discovery_port_container
+# ----------------------------------
+#
+# Type: <class 'int'>
+# Sub Class Description:
+#     The Syncthing discovery container port.
+# Examples:
+#     None
+syncthing_discovery_port_container: 21027
+
+
+# ===============
+# syncthing_image
+# ---------------
+#
+# Type: <class 'str'>
+# Sub Class Description:
+#     The Syncthing Docker image.
+# Examples:
+#     None
+syncthing_image: docker.io/syncthing/syncthing
+
+
 
 ```
 
@@ -206,4 +423,4 @@ Currently, the following Python interpreters are enabled for testing:
 
 ***
 
-Last changed: **2025-12-19 21:11:37 UTC**
+Last changed: **2025-12-23 12:26:20 UTC**
