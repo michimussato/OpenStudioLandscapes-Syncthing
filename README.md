@@ -6,6 +6,7 @@
    1. [Brief](#brief)
    2. [Install](#install)
    3. [Configure](#configure)
+      1. [Default Configuration](#default-configuration)
 2. [Community](#community)
 
 ***
@@ -73,9 +74,11 @@ A local config store location will be created if it doesn't exist, together with
 
 The following settings are available in `OpenStudioLandscapes-Syncthing` and are based on [`OpenStudioLandscapes-Syncthing/tree/main/OpenStudioLandscapes/Syncthing/config/models.py`](https://github.com/michimussato/OpenStudioLandscapes-Syncthing/tree/main/OpenStudioLandscapes/Syncthing/config/models.py).
 
+### Default Configuration
+
 
 <details>
-<summary>Default Configuration (click to expand)</summary>
+<summary(click to expand)</summary>
 
 
 ```yaml
@@ -452,4 +455,4 @@ To follow up on the previous LinkedIn publications, visit:
 
 ***
 
-Last changed: **2025-12-26 10:47:45 UTC**
+Last changed: **2025-12-26 10:53:12 UTC**
