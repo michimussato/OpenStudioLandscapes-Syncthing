@@ -7,7 +7,9 @@
    2. [Install](#install)
    3. [Configure](#configure)
       1. [Default Configuration](#default-configuration)
-2. [Community](#community)
+2. [External Resources](#external-resources)
+   1. [Official Documentation](#official-documentation)
+3. [Community](#community)
 
 ***
 
@@ -434,6 +436,18 @@ syncthing_image: docker.io/syncthing/syncthing
 
 ***
 
+# External Resources
+
+[![Logo Syncthing ](https://syncthing.net/img/logo-horizontal.svg)](https://syncthing.net/)
+
+Syncthing is a continuous file synchronization program. It synchronizes files between two or more computers in real time, safely protected from prying eyes. Your data is your data alone and you deserve to choose where it is stored, whether it is shared with some third party, and how it’s transmitted over the internet.
+
+## Official Documentation
+
+- [Website](https://syncthing.net/)
+- [Docs](https://docs.syncthing.net/)
+- [GitHub](https://github.com/syncthing/syncthing)
+
 ***
 
 # Community
@@ -457,4 +471,4 @@ To follow up on the previous LinkedIn publications, visit:
 
 ***
 
-Last changed: **2025-12-26 13:35:04 UTC**
+Last changed: **2025-12-28 10:53:55 UTC**
