@@ -51,7 +51,7 @@ def readme_feature(
         [
             "[Website](https://syncthing.net/)",
             "[Docs](https://docs.syncthing.net/)",
-            "[GitHub](https://github.com/syncthing/syncthing)"
+            "[GitHub](https://github.com/syncthing/syncthing)",
         ]
     )
 
