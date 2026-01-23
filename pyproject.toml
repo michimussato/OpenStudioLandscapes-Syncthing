@@ -15,7 +15,6 @@ classifiers = [
     "Programming Language :: Python",
 ]
 dependencies = [
-    "OpenStudioLandscapes @ git+https://github.com/michimussato/OpenStudioLandscapes",
     "PyYAML",
     "dagster==1.9.11",
     "docker-compose-graph @ git+https://github.com/michimussato/docker-compose-graph.git",
@@ -39,46 +38,36 @@ requires-python = ">=3.11"
 [project.entry-points]
 
 [project.optional-dependencies]
-coverage = [
-    "coverage",
-    "pytest",
-]
 dev = [
-    "OpenStudioLandscapes-Syncthing[coverage]",
     "OpenStudioLandscapes-Syncthing[lint]",
-    "OpenStudioLandscapes-Syncthing[nox]",
     "OpenStudioLandscapes-Syncthing[readme]",
     "OpenStudioLandscapes-Syncthing[sbom]",
-    "OpenStudioLandscapes-Syncthing[testing]",
 ]
 graphviz = [
     "graphviz",
     "pipdeptree",
 ]
 lint = [
+    "OpenStudioLandscapes-Syncthing[optional-base]",
     "black",
     "isort",
     "pre-commit",
     "pylint",
 ]
-nox = [
-    "OpenStudioLandscapes-Syncthing[testing]",
-    "nox",
+optional-base = [
+    "OpenStudioLandscapes @ git+https://github.com/michimussato/OpenStudioLandscapes.git",
 ]
 pyproject = [
     "OpenStudioLandscapesUtil-VersionBumper @ git+https://github.com/michimussato/OpenStudioLandscapesUtil-VersionBumper.git",
 ]
 readme = [
+    "OpenStudioLandscapes-Syncthing[optional-base]",
     "OpenStudioLandscapesUtil-ReadmeGenerator @ git+https://github.com/michimussato/OpenStudioLandscapesUtil-ReadmeGenerator.git",
 ]
 sbom = [
     "OpenStudioLandscapes-Syncthing[graphviz]",
+    "OpenStudioLandscapes-Syncthing[optional-base]",
     "cyclonedx-bom",
-]
-testing = [
-    "pytest",
-    "pytest-cov",
-    "setuptools",
 ]
 
 [project.readme]
