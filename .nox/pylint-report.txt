@@ -20,7 +20,7 @@ src/OpenStudioLandscapes/Syncthing/assets.py:275:0: C0116: Missing function or m
 src/OpenStudioLandscapes/Syncthing/assets.py:34:0: W0614: Unused import(s) LOGGER, DOCKER_PROGRESS, GROUP_BASE_ENV, KEY_BASE_ENV, ASSET_HEADER_BASE_ENV, GROUP_BASE, KEY_BASE, GROUP_LANDSCAPE_MAP, KEY_LANDSCAPE_MAP, ASSET_HEADER_LANDSCAPE_MAP, GROUP_DISTRIBUTABLE, KEY_DISTRIBUTABLE, ASSET_HEADER_DISTRIBUTABLE, get_dagster_logger, DAGSTER_DEFAULT_OUTPUT and FeatureBaseModel from wildcard import of OpenStudioLandscapes.engine.constants (unused-wildcard-import)
 src/OpenStudioLandscapes/Syncthing/assets.py:35:0: W0614: Unused import(s) GroupIn, OpenStudioLandscapesConfig, FeatureVolumeType, ComposeCmdExclusion, DockerComposeNetworkMode, DockerComposeRestartPolicy and DockerComposeDependsOnPolicy from wildcard import of OpenStudioLandscapes.engine.enums (unused-wildcard-import)
 src/OpenStudioLandscapes/Syncthing/assets.py:36:0: W0614: Unused import(s) json, os, shlex, time, git, requests, discovery, cmd_list_to_str, get_pip_install_str, get_apt_install_str, get_copy_str, get_wget_str, get_git_root, get_configs_root, get_data_root, get_bin_root, get_image_name, parse_docker_image_path, get_compose_scope, get_feature_config, expand_dict_vars, metadatavalues_from_dict, get_bool_env, get_str_env, get_all_compose_scopes, get_dynamic_ins, get_image_metadata, create_image, get_networks_dict, download_file, Any, MutableMapping, Tuple, OpExecutionContext, DockerConfigModel, ComposeScopeException, OpenStudioLandscapesException, queue, shutil, subprocess, threading, OpenStudioLandscapesDockerException, docker_build_cmd, docker_push_cmd, OutputReader, execute_in_threads, docker_process_cmds and docker_do from wildcard import of OpenStudioLandscapes.engine.utils (unused-wildcard-import)
-src/OpenStudioLandscapes/Syncthing/assets.py:37:0: W0614: Unused import(s) DockerComposeServiceDefinition, DockerComposeNetworkDefinition, Required, TypedDict and Optional from wildcard import of OpenStudioLandscapes.engine.utils.docker.compose_dicts (unused-wildcard-import)
+src/OpenStudioLandscapes/Syncthing/assets.py:37:0: W0614: Unused import(s) DockerComposeServiceDefinition, DockerComposeNetworkDefinition, Optional, Required and TypedDict from wildcard import of OpenStudioLandscapes.engine.utils.docker.compose_dicts (unused-wildcard-import)
 src/OpenStudioLandscapes/Syncthing/assets.py:40:0: W0614: Unused import(s) GROUP, KEY and dist from wildcard import of OpenStudioLandscapes.Syncthing.constants (unused-wildcard-import)
 ************* Module OpenStudioLandscapes.Syncthing.definitions
 src/OpenStudioLandscapes/Syncthing/definitions.py:1:0: C0114: Missing module docstring (missing-module-docstring)
@@ -46,5 +46,5 @@ src/OpenStudioLandscapes/Syncthing/doc/readme.py:6:0: C0116: Missing function or
 src/OpenStudioLandscapes/Syncthing/doc/readme.py:21:8: C2801: Unnecessarily calls dunder method __str__. Use str built-in function. (unnecessary-dunder-call)
 
 ------------------------------------------------------------------
-Your code has been rated at 6.74/10 (previous run: 6.34/10, +0.41)
+Your code has been rated at 6.74/10 (previous run: 6.35/10, +0.39)
 
