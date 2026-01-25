@@ -212,6 +212,7 @@ def compose_syncthing(
             {
                 *_volume_relative,
                 *config_engine.global_bind_volumes,
+                *CONFIG.local_bind_volumes,
             }
         )
     }
@@ -241,6 +242,7 @@ def compose_syncthing(
                     "PUID": "1000",
                     "PGID": "1000",
                     **config_engine.global_environment_variables,
+                    **CONFIG.local_environment_variables,
                 },
                 # "healthcheck": {
                 #     "test": ["CMD", "curl", "-f", f"http://localhost:{env_base.get('DAGSTER_DEV_PORT_CONTAINER')}"],
