@@ -208,9 +208,12 @@ def compose_syncthing(
         )
 
     volumes_dict = {
-        "volumes": [
-            *_volume_relative,
-        ]
+        "volumes": list(
+            {
+                *_volume_relative,
+                *config_engine.global_bind_volumes,
+            }
+        )
     }
 
     service_name = "syncthing"
@@ -237,6 +240,7 @@ def compose_syncthing(
                 "environment": {
                     "PUID": "1000",
                     "PGID": "1000",
+                    **config_engine.global_environment_variables,
                 },
                 # "healthcheck": {
                 #     "test": ["CMD", "curl", "-f", f"http://localhost:{env_base.get('DAGSTER_DEV_PORT_CONTAINER')}"],
