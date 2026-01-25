@@ -39,12 +39,11 @@ src/OpenStudioLandscapes/Syncthing/config/models.py:13:0: C0413: Import "from Op
 src/OpenStudioLandscapes/Syncthing/config/models.py:15:0: C0413: Import "from OpenStudioLandscapes.Syncthing import constants, dist" should be placed at the top of the module (wrong-import-position)
 src/OpenStudioLandscapes/Syncthing/config/models.py:18:0: C0115: Missing class docstring (missing-class-docstring)
 src/OpenStudioLandscapes/Syncthing/config/models.py:86:4: C0116: Missing function or method docstring (missing-function-docstring)
-src/OpenStudioLandscapes/Syncthing/config/models.py:92:12: E1101: Instance of 'FieldInfo' has no 'expanduser' member (no-member)
 ************* Module OpenStudioLandscapes.Syncthing.doc.readme
 src/OpenStudioLandscapes/Syncthing/doc/readme.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 src/OpenStudioLandscapes/Syncthing/doc/readme.py:6:0: C0116: Missing function or method docstring (missing-function-docstring)
 src/OpenStudioLandscapes/Syncthing/doc/readme.py:21:8: C2801: Unnecessarily calls dunder method __str__. Use str built-in function. (unnecessary-dunder-call)
 
 ------------------------------------------------------------------
-Your code has been rated at 6.74/10 (previous run: 6.35/10, +0.39)
+Your code has been rated at 7.12/10 (previous run: 6.83/10, +0.30)
 

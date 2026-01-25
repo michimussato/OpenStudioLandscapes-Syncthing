@@ -455,19 +455,6 @@
         "message-id": "C0116"
     },
     {
-        "type": "error",
-        "module": "OpenStudioLandscapes.Syncthing.config.models",
-        "obj": "Config.syncthing_config_dir_expanded",
-        "line": 92,
-        "column": 12,
-        "endLine": 92,
-        "endColumn": 48,
-        "path": "src/OpenStudioLandscapes/Syncthing/config/models.py",
-        "symbol": "no-member",
-        "message": "Instance of 'FieldInfo' has no 'expanduser' member",
-        "message-id": "E1101"
-    },
-    {
         "type": "convention",
         "module": "OpenStudioLandscapes.Syncthing.doc.readme",
         "obj": "",
