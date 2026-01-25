@@ -89,7 +89,7 @@ class Config(FeatureBaseModel):
             raise KeyError("`env` is `None`.")
         LOGGER.debug(f"Expanding {self.syncthing_config_dir}...")
         ret = pathlib.Path(
-            self.syncthing_config_dir.expanduser()
+            self.syncthing_config_dir.expanduser()  # pylint: disable=E1101
             .as_posix()
             .format(
                 **{
