@@ -239,8 +239,6 @@ def compose_syncthing(
                 "image": CONFIG.syncthing_image,
                 "restart": DockerComposePolicies.RESTART_POLICY.UNLESS_STOPPED.value,
                 "environment": {
-                    "PUID": "1000",
-                    "PGID": "1000",
                     **config_engine.global_environment_variables,
                     **CONFIG.local_environment_variables,
                 },
