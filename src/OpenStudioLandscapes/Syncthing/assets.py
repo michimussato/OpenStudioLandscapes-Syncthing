@@ -238,10 +238,12 @@ def compose_syncthing(
                 "image": CONFIG.syncthing_image,
                 "restart": DockerComposePolicies.RESTART_POLICY.UNLESS_STOPPED.value,
                 # https://www.man7.org/linux/man-pages/man7/capabilities.7.html
-                "cap_add": [
-                    "CAP_CHOWN",
-                    "CAP_FOWNER",
-                ],
+                # Todo:
+                #  - [ ] not successful with CAPS so far. Running as root for now.
+                # "cap_add": [
+                #     "CAP_CHOWN",
+                #     "CAP_FOWNER",
+                # ],
                 "environment": {
                     # "UMASK": CONFIG.syncthing_umask,
                     "PUID": str(CONFIG.syncthing_puid),
