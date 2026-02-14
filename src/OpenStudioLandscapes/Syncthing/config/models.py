@@ -40,8 +40,14 @@ class Config(FeatureBaseModel):
     )
 
     syncthing_tcp_port_host: PositiveInt = Field(
-        default=22022,
+        default=22000,
         description="The Syncthing TCP host port.",
+        frozen=False,
+    )
+
+    syncthing_udp_port_host: PositiveInt = Field(
+        default=22000,
+        description="The Syncthing UDP host port.",
         frozen=False,
     )
 
@@ -51,12 +57,6 @@ class Config(FeatureBaseModel):
         frozen=True,
     )
 
-    syncthing_udp_port_host: PositiveInt = Field(
-        default=22022,
-        description="The Syncthing UDP host port.",
-        frozen=False,
-    )
-
     syncthing_udp_port_container: PositiveInt = Field(
         default=22000,
         description="The Syncthing UDP container port.",
@@ -64,7 +64,7 @@ class Config(FeatureBaseModel):
     )
 
     syncthing_discovery_port_host: PositiveInt = Field(
-        default=22027,
+        default=21027,
         description="The Syncthing discovery host port.",
         frozen=False,
     )
