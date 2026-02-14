@@ -433,6 +433,47 @@ syncthing_discovery_port_container: 21027
 # Examples:
 #     None
 syncthing_image: docker.io/syncthing/syncthing
+
+
+# ==============
+# syncthing_puid
+# --------------
+#
+# Type: <class 'int'>
+# Description:
+#     The Syncthing User ID.
+# Required:
+#     False
+# Examples:
+#     None
+syncthing_puid: 1000
+
+
+# ==============
+# syncthing_pgid
+# --------------
+#
+# Type: <class 'int'>
+# Description:
+#     The Syncthing Group ID.
+# Required:
+#     False
+# Examples:
+#     None
+syncthing_pgid: 1000
+
+
+# ======================
+# syncthing_stguiaddress
+# ----------------------
+#
+# Type: <class 'str'>
+# Description:
+#     The Syncthing GUI Address.
+# Required:
+#     False
+# Examples:
+#     None
 ```
 
 
@@ -452,6 +493,7 @@ Syncthing is a continuous file synchronization program. It synchronizes files be
 - [Website](https://syncthing.net/)
 - [Docs](https://docs.syncthing.net/)
 - [GitHub](https://github.com/syncthing/syncthing)
+- [Syncthing Docker Readme](https://github.com/syncthing/syncthing/blob/main/README-Docker.md)
 
 ***
 
@@ -485,4 +527,4 @@ To follow up on the previous LinkedIn publications, visit:
 
 ***
 
-Last changed: **2026-01-27 20:31:09 UTC**
+Last changed: **2026-02-14 08:47:30 UTC**
