@@ -80,6 +80,21 @@ class Config(FeatureBaseModel):
         description="The Syncthing Docker image.",
     )
 
+    syncthing_puid: int = Field(
+        default=1000,
+        description="The Syncthing User ID.",
+    )
+
+    syncthing_pgid: int = Field(
+        default=1000,
+        description="The Syncthing Group ID.",
+    )
+
+    syncthing_stguiaddress: str = Field(
+        default="",
+        description="The Syncthing GUI Address.",
+    )
+
     # EXPANDABLE PATHS
     @property
     def syncthing_config_dir_expanded(self) -> pathlib.Path:
