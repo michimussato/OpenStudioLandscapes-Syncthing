@@ -46,6 +46,7 @@ def readme_feature(
             "[Website](https://syncthing.net/)",
             "[Docs](https://docs.syncthing.net/)",
             "[GitHub](https://github.com/syncthing/syncthing)",
+            "[Syncthing Docker Readme](https://github.com/syncthing/syncthing/blob/main/README-Docker.md)",
         ]
     )
 
