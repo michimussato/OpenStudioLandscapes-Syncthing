@@ -238,15 +238,15 @@ def compose_syncthing(
                 "image": CONFIG.syncthing_image,
                 "restart": DockerComposePolicies.RESTART_POLICY.UNLESS_STOPPED.value,
                 # https://www.man7.org/linux/man-pages/man7/capabilities.7.html
-                "cap_add": [
-                    "CAP_CHOWN",
-                    "CAP_FOWNER",
-                ],
+                # "cap_add": [
+                #     "CAP_CHOWN",
+                #     "CAP_FOWNER",
+                # ],
                 "environment": {
-                    "UMASK": CONFIG.syncthing_umask,
-                    "PUID": CONFIG.syncthing_puid,
-                    "PGID": CONFIG.syncthing_pgid,
-                    "STGUIADDRESS": CONFIG.syncthing_stguiaddress,
+                    # "UMASK": CONFIG.syncthing_umask,
+                    "PUID": str(CONFIG.syncthing_puid),
+                    "PGID": str(CONFIG.syncthing_pgid),
+                    # "STGUIADDRESS": CONFIG.syncthing_stguiaddress,
                     **config_engine.global_environment_variables,
                     **CONFIG.local_environment_variables,
                 },
