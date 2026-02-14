@@ -237,8 +237,14 @@ def compose_syncthing(
                 "domainname": config_engine.openstudiolandscapes__domain_lan,
                 "image": CONFIG.syncthing_image,
                 "restart": DockerComposePolicies.RESTART_POLICY.UNLESS_STOPPED.value,
+                # https://www.man7.org/linux/man-pages/man7/capabilities.7.html
+                "cap_add": [
+                    "CAP_CHOWN",
+                    "CAP_FOWNER",
+                ],
                 "environment": {
-                    "PYID": CONFIG.syncthing_puid,
+                    "UMASK": CONFIG.syncthing_umask,
+                    "PUID": CONFIG.syncthing_puid,
                     "PGID": CONFIG.syncthing_pgid,
                     "STGUIADDRESS": CONFIG.syncthing_stguiaddress,
                     **config_engine.global_environment_variables,

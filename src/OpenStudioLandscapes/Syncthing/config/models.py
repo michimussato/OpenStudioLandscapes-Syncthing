@@ -80,6 +80,11 @@ class Config(FeatureBaseModel):
         description="The Syncthing Docker image.",
     )
 
+    syncthing_umask: str = Field(
+        default="0022",
+        description="The Syncthing UMASK.",
+    )
+
     syncthing_puid: int = Field(
         default=1000,
         description="The Syncthing User ID.",

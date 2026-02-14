@@ -50,6 +50,17 @@ def readme_feature(
         ]
     )
 
+    doc.add_heading(
+        text="Elevated Permissions",
+        level=2,
+    )
+
+    doc.add_unordered_list(
+        [
+            "[Elevated permissions](https://docs.syncthing.net/advanced/folder-sync-ownership.html#elevated-permissions)",
+        ]
+    )
+
     doc.add_horizontal_rule()
 
     return doc
