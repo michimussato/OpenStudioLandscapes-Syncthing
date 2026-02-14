@@ -250,12 +250,12 @@ def compose_syncthing(
                     **config_engine.global_environment_variables,
                     **CONFIG.local_environment_variables,
                 },
-                "healthcheck": {
-                    "test": f"curl -fkLsS -m 2 127.0.0.1:{CONFIG.syncthing_port_container}/rest/noauth/health | grep -o --color=never OK || exit 1",
-                    "interval": "1m",
-                    "timeout": "10s",
-                    "retries": "3",
-                },
+                # "healthcheck": {
+                #     "test": f"curl -fkLsS -m 2 127.0.0.1:{CONFIG.syncthing_port_container}/rest/noauth/health | grep -o --color=never OK || exit 1",
+                #     "interval": "1m",
+                #     "timeout": "10s",
+                #     "retries": "3",
+                # },
                 **copy.deepcopy(volumes_dict),
                 **copy.deepcopy(network_dict),
                 **copy.deepcopy(ports_dict),
