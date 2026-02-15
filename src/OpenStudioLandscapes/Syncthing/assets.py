@@ -240,18 +240,23 @@ def compose_syncthing(
                 # https://www.man7.org/linux/man-pages/man7/capabilities.7.html
                 # Todo:
                 #  - [ ] not successful with CAPS so far. Running as root for now.
+                #        - https://docs.syncthing.net/users/autostart.html#permissions
+                #        - [ ] Works by setting PCAP environment variable
                 # "cap_add": [
                 #     "CAP_CHOWN",
                 #     "CAP_FOWNER",
                 # ],
                 "environment": {
-                    # "UMASK": CONFIG.syncthing_umask,
+                    "UMASK": str(CONFIG.syncthing_umask),
                     "PUID": str(CONFIG.syncthing_puid),
                     "PGID": str(CONFIG.syncthing_pgid),
-                    # "STGUIADDRESS": CONFIG.syncthing_stguiaddress,
+                    "PCAP": str(CONFIG.syncthing_pcap),
+                    "STGUIADDRESS": CONFIG.syncthing_stguiaddress,
                     **config_engine.global_environment_variables,
                     **CONFIG.local_environment_variables,
                 },
+                # Todo
+                #  - [ ] test cmd results in weird escapings in docker-compose-graph. fix.
                 # "healthcheck": {
                 #     "test": f"curl -fkLsS -m 2 127.0.0.1:{CONFIG.syncthing_port_container}/rest/noauth/health | grep -o --color=never OK || exit 1",
                 #     "interval": "1m",

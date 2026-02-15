@@ -9,6 +9,8 @@
       1. [Default Configuration](#default-configuration)
 2. [External Resources](#external-resources)
    1. [Official Documentation](#official-documentation)
+      1. [Elevated Permissions](#elevated-permissions)
+      2. [Ports](#ports)
 3. [Community](#community)
 
 ***
@@ -348,7 +350,21 @@ syncthing_port_container: 8384
 #     False
 # Examples:
 #     None
-syncthing_tcp_port_host: 22022
+syncthing_tcp_port_host: 22000
+
+
+# =======================
+# syncthing_udp_port_host
+# -----------------------
+#
+# Type: <class 'int'>
+# Description:
+#     The Syncthing UDP host port.
+# Required:
+#     False
+# Examples:
+#     None
+syncthing_udp_port_host: 22000
 
 
 # ============================
@@ -363,20 +379,6 @@ syncthing_tcp_port_host: 22022
 # Examples:
 #     None
 syncthing_tcp_port_container: 22000
-
-
-# =======================
-# syncthing_udp_port_host
-# -----------------------
-#
-# Type: <class 'int'>
-# Description:
-#     The Syncthing UDP host port.
-# Required:
-#     False
-# Examples:
-#     None
-syncthing_udp_port_host: 22022
 
 
 # ============================
@@ -404,7 +406,7 @@ syncthing_udp_port_container: 22000
 #     False
 # Examples:
 #     None
-syncthing_discovery_port_host: 22027
+syncthing_discovery_port_host: 21027
 
 
 # ==================================
@@ -435,6 +437,20 @@ syncthing_discovery_port_container: 21027
 syncthing_image: docker.io/syncthing/syncthing
 
 
+# ===============
+# syncthing_umask
+# ---------------
+#
+# Type: <class 'str'>
+# Description:
+#     The Syncthing UMASK Environment Variable.
+# Required:
+#     False
+# Examples:
+#     None
+syncthing_umask: '022'
+
+
 # ==============
 # syncthing_puid
 # --------------
@@ -461,6 +477,19 @@ syncthing_puid: 1000
 # Examples:
 #     None
 syncthing_pgid: 1000
+
+
+# ==============
+# syncthing_pcap
+# --------------
+#
+# Type: <class 'str'>
+# Description:
+#     The Syncthing PCAP Environment Variable. To grant Syncthing additional capabilities without running as root, use the PCAP environment variable with the same syntax as that for setcap(8). For example, cap_chown,cap_fowner+ep.
+# Required:
+#     False
+# Examples:
+#     None
 
 
 # ======================
@@ -495,6 +524,14 @@ Syncthing is a continuous file synchronization program. It synchronizes files be
 - [GitHub](https://github.com/syncthing/syncthing)
 - [Syncthing Docker Readme](https://github.com/syncthing/syncthing/blob/main/README-Docker.md)
 
+### Elevated Permissions
+
+- [Elevated permissions](https://docs.syncthing.net/advanced/folder-sync-ownership.html#elevated-permissions)
+
+### Ports
+
+- [Firewall Setup](https://docs.syncthing.net/users/firewall.html#firewall-setup)
+
 ***
 
 # Community
@@ -527,4 +564,4 @@ To follow up on the previous LinkedIn publications, visit:
 
 ***
 
-Last changed: **2026-02-14 08:47:30 UTC**
+Last changed: **2026-02-15 09:10:19 UTC**
