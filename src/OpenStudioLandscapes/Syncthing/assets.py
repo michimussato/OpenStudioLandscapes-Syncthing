@@ -247,7 +247,7 @@ def compose_syncthing(
                 #     "CAP_FOWNER",
                 # ],
                 "environment": {
-                    "TZ": CONFIG.tz,
+                    "TZ": config_engine.tz,
                     "UMASK": str(CONFIG.syncthing_umask),
                     "PUID": str(CONFIG.syncthing_puid),
                     "PGID": str(CONFIG.syncthing_pgid),
