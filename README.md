@@ -4,7 +4,8 @@
 
 1. [Feature: OpenStudioLandscapes-Syncthing](#feature-openstudiolandscapes-syncthing)
    1. [Brief](#brief)
-   2. [Install](#install)
+   2. [Clone](#clone)
+      1. [Clone and Install](#clone-and-install)
    3. [Configure](#configure)
       1. [Default Configuration](#default-configuration)
 2. [External Resources](#external-resources)
@@ -30,15 +31,27 @@ This is an extension to the OpenStudioLandscapes ecosystem. The full documentati
 > You feel like writing your own Feature? Go and check out the 
 > [OpenStudioLandscapes-Template](https://github.com/michimussato/OpenStudioLandscapes-Template).
 
-## Install
+## Clone
 
 Clone this repository into `OpenStudioLandscapes/.features` (assuming the current working directory to be the Git repository root `./OpenStudioLandscapes`):
 
 ```shell
 # cd OpenStudioLandscapes
 source .venv/bin/activate
-openstudiolandscapes install-feature --repo=https://github.com/michimussato/OpenStudioLandscapes-Syncthing.git
+openstudiolandscapes clone-feature --repo=https://github.com/michimussato/OpenStudioLandscapes-Syncthing.git
+deactivate
 # Check the resulting console output for installation instructions
+
+```
+
+### Clone and Install
+
+```shell
+# cd OpenStudioLandscapes
+source .venv/bin/activate
+openstudiolandscapes clone-feature --repo=https://github.com/michimussato/OpenStudioLandscapes-Syncthing.git \
+    && pip install --editable ./.features/OpenStudioLandscapes-Syncthing
+deactivate
 
 ```
 
@@ -564,4 +577,4 @@ To follow up on the previous LinkedIn publications, visit:
 
 ***
 
-Last changed: **2026-02-15 09:10:19 UTC**
+Last changed: **2026-02-17 11:25:34 UTC**
