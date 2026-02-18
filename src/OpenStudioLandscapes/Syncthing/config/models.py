@@ -98,11 +98,11 @@ class Config(FeatureBaseModel):
     syncthing_pcap: str = Field(
         default="",
         description="The Syncthing PCAP Environment Variable. "
-                    "To grant Syncthing additional capabilities "
-                    "without running as root, use the PCAP environment "
-                    "variable with the same syntax as that "
-                    "for setcap(8). For example, "
-                    "cap_chown,cap_fowner+ep.",
+        "To grant Syncthing additional capabilities "
+        "without running as root, use the PCAP environment "
+        "variable with the same syntax as that "
+        "for setcap(8). For example, "
+        "cap_chown,cap_fowner+ep.",
     )
 
     syncthing_stguiaddress: str = Field(
