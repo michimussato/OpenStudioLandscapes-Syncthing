@@ -40,12 +40,13 @@ src/OpenStudioLandscapes/Syncthing/config/models.py:14:0: C0413: Import "from Op
 src/OpenStudioLandscapes/Syncthing/config/models.py:17:0: C0115: Missing class docstring (missing-class-docstring)
 src/OpenStudioLandscapes/Syncthing/config/models.py:115:4: C0116: Missing function or method docstring (missing-function-docstring)
 ************* Module OpenStudioLandscapes.Syncthing.doc.readme
-src/OpenStudioLandscapes/Syncthing/doc/readme.py:49:0: C0301: Line too long (107/100) (line-too-long)
-src/OpenStudioLandscapes/Syncthing/doc/readme.py:60:0: C0301: Line too long (122/100) (line-too-long)
+src/OpenStudioLandscapes/Syncthing/doc/readme.py:62:0: C0301: Line too long (107/100) (line-too-long)
+src/OpenStudioLandscapes/Syncthing/doc/readme.py:73:0: C0301: Line too long (122/100) (line-too-long)
 src/OpenStudioLandscapes/Syncthing/doc/readme.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-src/OpenStudioLandscapes/Syncthing/doc/readme.py:6:0: C0116: Missing function or method docstring (missing-function-docstring)
-src/OpenStudioLandscapes/Syncthing/doc/readme.py:21:8: C2801: Unnecessarily calls dunder method __str__. Use str built-in function. (unnecessary-dunder-call)
+src/OpenStudioLandscapes/Syncthing/doc/readme.py:5:0: W0105: String statement has no effect (pointless-string-statement)
+src/OpenStudioLandscapes/Syncthing/doc/readme.py:19:0: C0116: Missing function or method docstring (missing-function-docstring)
+src/OpenStudioLandscapes/Syncthing/doc/readme.py:34:8: C2801: Unnecessarily calls dunder method __str__. Use str built-in function. (unnecessary-dunder-call)
 
 ------------------------------------------------------------------
-Your code has been rated at 7.14/10 (previous run: 6.79/10, +0.35)
+Your code has been rated at 7.09/10 (previous run: 6.79/10, +0.30)
 
