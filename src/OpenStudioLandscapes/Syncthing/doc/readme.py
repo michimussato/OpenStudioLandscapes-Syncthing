@@ -2,6 +2,19 @@ import textwrap
 
 import snakemd
 
+"""
+Performance issues:
+- media issue, wrong ethernet cable?
+- try network-mode: host?
+- PC performance?
+- noticed performance drops when rsnapshot is running
+
+Shared folder size
+- better many small folders than one large one?
+  - large takes forever
+- can we use overlayfs somehow?
+"""
+
 
 def readme_feature(
     doc: snakemd.Document,
