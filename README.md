@@ -8,6 +8,7 @@
       1. [Clone and Install](#clone-and-install)
    3. [Configure](#configure)
       1. [Default Configuration](#default-configuration)
+   4. [Local Development](#local-development)
 2. [External Resources](#external-resources)
    1. [Official Documentation](#official-documentation)
       1. [Elevated Permissions](#elevated-permissions)
@@ -41,7 +42,6 @@ source .venv/bin/activate
 openstudiolandscapes clone-feature --repo=https://github.com/michimussato/OpenStudioLandscapes-Syncthing.git
 deactivate
 # Check the resulting console output for installation instructions
-
 ```
 
 ### Clone and Install
@@ -52,7 +52,6 @@ source .venv/bin/activate
 openstudiolandscapes clone-feature --repo=https://github.com/michimussato/OpenStudioLandscapes-Syncthing.git \
     && pip install --editable ./.features/OpenStudioLandscapes-Syncthing
 deactivate
-
 ```
 
 For more info on `pip` see [VCS Support of `pip`](https://pip.pypa.io/en/stable/topics/vcs-support/).
@@ -79,7 +78,6 @@ A local config store location will be created if it doesn't exist, together with
 The following settings are available in `OpenStudioLandscapes-Syncthing` and are based on [`OpenStudioLandscapes-Syncthing/tree/main/OpenStudioLandscapes/Syncthing/config/models.py`](https://github.com/michimussato/OpenStudioLandscapes-Syncthing/tree/main/OpenStudioLandscapes/Syncthing/config/models.py).
 
 ### Default Configuration
-
 
 <details open>
 <summary><code>config.yml</code></summary>
@@ -518,9 +516,19 @@ syncthing_pgid: 1000
 #     None
 ```
 
-
 </details>
 
+
+## Local Development
+
+```shell
+cd ./.features/OpenStudioLandscapes-Syncthing
+python3.11 -m venv .venv
+source .venv/bin/activate
+pip install --upgrade pip setuptools setuptools_scm wheel
+pip install --editable .[dev]
+dagster dev --workspace workspace.yaml
+```
 
 ***
 
@@ -577,4 +585,4 @@ To follow up on the previous LinkedIn publications, visit:
 
 ***
 
-Last changed: **2026-04-03 02:43:07 UTC**
+Last changed: **2026-04-11 01:52:27 UTC**
