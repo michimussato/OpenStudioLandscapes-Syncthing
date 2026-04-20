@@ -50,5 +50,5 @@ src/OpenStudioLandscapes/Syncthing/doc/readme.py:19:0: C0116: Missing function o
 src/OpenStudioLandscapes/Syncthing/doc/readme.py:34:8: C2801: Unnecessarily calls dunder method __str__. Use str built-in function. (unnecessary-dunder-call)
 
 ------------------------------------------------------------------
-Your code has been rated at 7.14/10 (previous run: 6.62/10, +0.52)
+Your code has been rated at 7.14/10 (previous run: 6.38/10, +0.76)
 
