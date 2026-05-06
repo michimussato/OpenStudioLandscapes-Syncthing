@@ -35,14 +35,14 @@ src/OpenStudioLandscapes/Syncthing/__init__.py:6:5: W0511: TODO: Import directly
 ************* Module OpenStudioLandscapes.Syncthing
 src/OpenStudioLandscapes/Syncthing/__init__.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 src/OpenStudioLandscapes/Syncthing/__init__.py:1:0: C0103: Module name "Syncthing" doesn't conform to snake_case naming style (invalid-name)
+src/OpenStudioLandscapes/Syncthing/__init__.py:25:4: E0401: Unable to import 'OpenStudioLandscapes.engine.logging.loggers' (import-error)
+src/OpenStudioLandscapes/Syncthing/__init__.py:25:4: E0611: No name 'logging' in module 'OpenStudioLandscapes.engine' (no-name-in-module)
 ************* Module OpenStudioLandscapes.Syncthing.config.models
 src/OpenStudioLandscapes/Syncthing/config/models.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-src/OpenStudioLandscapes/Syncthing/config/models.py:5:0: E0401: Unable to import 'OpenStudioLandscapes.engine.logging.loggers' (import-error)
-src/OpenStudioLandscapes/Syncthing/config/models.py:5:0: E0611: No name 'logging' in module 'OpenStudioLandscapes.engine' (no-name-in-module)
-src/OpenStudioLandscapes/Syncthing/config/models.py:14:0: C0115: Missing class docstring (missing-class-docstring)
-src/OpenStudioLandscapes/Syncthing/config/models.py:112:4: C0116: Missing function or method docstring (missing-function-docstring)
-src/OpenStudioLandscapes/Syncthing/config/models.py:6:0: C0411: third party import "pydantic.Field" should be placed before first party imports "OpenStudioLandscapes.engine.config.models.FeatureBaseModel", "OpenStudioLandscapes.engine.logging.loggers.FEATURE_LOGGER"  (wrong-import-order)
-src/OpenStudioLandscapes/Syncthing/config/models.py:11:0: C0412: Imports from package OpenStudioLandscapes are not grouped (ungrouped-imports)
+src/OpenStudioLandscapes/Syncthing/config/models.py:13:0: C0115: Missing class docstring (missing-class-docstring)
+src/OpenStudioLandscapes/Syncthing/config/models.py:111:4: C0116: Missing function or method docstring (missing-function-docstring)
+src/OpenStudioLandscapes/Syncthing/config/models.py:5:0: C0411: third party import "pydantic.Field" should be placed before first party import "OpenStudioLandscapes.engine.config.models.FeatureBaseModel"  (wrong-import-order)
+src/OpenStudioLandscapes/Syncthing/config/models.py:10:0: C0412: Imports from package OpenStudioLandscapes are not grouped (ungrouped-imports)
 ************* Module OpenStudioLandscapes.Syncthing.doc.readme
 src/OpenStudioLandscapes/Syncthing/doc/readme.py:62:0: C0301: Line too long (107/100) (line-too-long)
 src/OpenStudioLandscapes/Syncthing/doc/readme.py:73:0: C0301: Line too long (122/100) (line-too-long)
@@ -52,5 +52,5 @@ src/OpenStudioLandscapes/Syncthing/doc/readme.py:19:0: C0116: Missing function o
 src/OpenStudioLandscapes/Syncthing/doc/readme.py:34:8: C2801: Unnecessarily calls dunder method __str__. Use str built-in function. (unnecessary-dunder-call)
 
 ------------------------------------------------------------------
-Your code has been rated at 6.51/10 (previous run: 6.22/10, +0.29)
+Your code has been rated at 6.53/10 (previous run: 6.23/10, +0.31)
 
