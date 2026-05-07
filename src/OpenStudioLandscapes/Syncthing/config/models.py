@@ -7,7 +7,11 @@ from pydantic import (
     PositiveInt,
 )
 
-from OpenStudioLandscapes.Syncthing import *
+from OpenStudioLandscapes.Syncthing import (
+    LOGGER,
+    constants,
+    dist,
+)
 
 
 class Config(FeatureBaseModel):

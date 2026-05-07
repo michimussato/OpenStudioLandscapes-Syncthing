@@ -4,7 +4,10 @@ from dagster import (
 )
 
 import OpenStudioLandscapes.Syncthing.assets
-from OpenStudioLandscapes.Syncthing import *
+from OpenStudioLandscapes.Syncthing import (
+    dist,
+    LOGGER,
+)
 
 LOGGER.info(f"Loading {dist.name} assets...")
 
