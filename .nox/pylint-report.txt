@@ -1,46 +1,31 @@
 ************* Module OpenStudioLandscapes.Syncthing.assets
-src/OpenStudioLandscapes/Syncthing/assets.py:169:0: C0301: Line too long (116/100) (line-too-long)
-src/OpenStudioLandscapes/Syncthing/assets.py:170:0: C0301: Line too long (117/100) (line-too-long)
-src/OpenStudioLandscapes/Syncthing/assets.py:171:0: C0301: Line too long (144/100) (line-too-long)
-src/OpenStudioLandscapes/Syncthing/assets.py:262:0: C0301: Line too long (150/100) (line-too-long)
-src/OpenStudioLandscapes/Syncthing/assets.py:179:5: W0511: Todo (fixme)
-src/OpenStudioLandscapes/Syncthing/assets.py:241:17: W0511: Todo: (fixme)
-src/OpenStudioLandscapes/Syncthing/assets.py:259:17: W0511: Todo (fixme)
+src/OpenStudioLandscapes/Syncthing/assets.py:185:5: W0511: Todo (fixme)
+src/OpenStudioLandscapes/Syncthing/assets.py:247:17: W0511: Todo: (fixme)
+src/OpenStudioLandscapes/Syncthing/assets.py:265:17: W0511: Todo (fixme)
 src/OpenStudioLandscapes/Syncthing/assets.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-src/OpenStudioLandscapes/Syncthing/assets.py:34:0: W0401: Wildcard import OpenStudioLandscapes.engine.constants (wildcard-import)
-src/OpenStudioLandscapes/Syncthing/assets.py:35:0: W0401: Wildcard import OpenStudioLandscapes.engine.enums (wildcard-import)
-src/OpenStudioLandscapes/Syncthing/assets.py:36:0: W0401: Wildcard import OpenStudioLandscapes.engine.utils (wildcard-import)
-src/OpenStudioLandscapes/Syncthing/assets.py:37:0: W0401: Wildcard import OpenStudioLandscapes.engine.utils.docker.compose_dicts (wildcard-import)
-src/OpenStudioLandscapes/Syncthing/assets.py:40:0: W0401: Wildcard import OpenStudioLandscapes.Syncthing.constants (wildcard-import)
-src/OpenStudioLandscapes/Syncthing/assets.py:105:0: C0116: Missing function or method docstring (missing-function-docstring)
-src/OpenStudioLandscapes/Syncthing/assets.py:107:4: C0103: Argument name "CONFIG" doesn't conform to snake_case naming style (invalid-name)
-src/OpenStudioLandscapes/Syncthing/assets.py:150:0: C0112: Empty function docstring (empty-docstring)
-src/OpenStudioLandscapes/Syncthing/assets.py:152:4: C0103: Argument name "CONFIG" doesn't conform to snake_case naming style (invalid-name)
-src/OpenStudioLandscapes/Syncthing/assets.py:150:0: R0914: Too many local variables (19/15) (too-many-locals)
-src/OpenStudioLandscapes/Syncthing/assets.py:294:0: C0116: Missing function or method docstring (missing-function-docstring)
-src/OpenStudioLandscapes/Syncthing/assets.py:34:0: W0614: Unused import(s) LOGGER, DOCKER_PROGRESS, GROUP_BASE_ENV, KEY_BASE_ENV, ASSET_HEADER_BASE_ENV, GROUP_BASE, KEY_BASE, GROUP_VFX_PLATFORM, KEY_VFX_PLATFORM, ASSET_HEADER_VFX_PLATFORM, GROUP_LANDSCAPE_MAP, KEY_LANDSCAPE_MAP, ASSET_HEADER_LANDSCAPE_MAP, GROUP_DISTRIBUTABLE, KEY_DISTRIBUTABLE, ASSET_HEADER_DISTRIBUTABLE, get_dagster_logger, DAGSTER_DEFAULT_OUTPUT and FeatureBaseModel from wildcard import of OpenStudioLandscapes.engine.constants (unused-wildcard-import)
-src/OpenStudioLandscapes/Syncthing/assets.py:35:0: W0614: Unused import(s) GroupIn, OpenStudioLandscapesConfig, FeatureVolumeType, ComposeCmdExclusion, DockerComposeNetworkMode, DockerComposeRestartPolicy and DockerComposeDependsOnPolicy from wildcard import of OpenStudioLandscapes.engine.enums (unused-wildcard-import)
-src/OpenStudioLandscapes/Syncthing/assets.py:36:0: W0614: Unused import(s) datetime, json, os, shlex, time, git, requests, discovery, cmd_list_to_str, get_pip_install_str, get_apt_install_str, get_copy_str, get_wget_str, get_git_root, get_configs_root, get_data_root, get_bin_root, get_image_name, parse_docker_image_path, get_compose_scope, get_feature_config, expand_dict_vars, metadatavalues_from_dict, get_bool_env, get_str_env, get_all_compose_scopes, get_dynamic_ins, get_image_metadata, create_image, get_networks_dict, download_file, get_docker_run_cmd, Any, MutableMapping, Tuple, OpExecutionContext, DockerConfigModel, ComposeScopeException, OpenStudioLandscapesException, shutil, OpenStudioLandscapesDockerException, docker_build_cmd, docker_push_cmd, docker_do and submit_cmds from wildcard import of OpenStudioLandscapes.engine.utils (unused-wildcard-import)
-src/OpenStudioLandscapes/Syncthing/assets.py:37:0: W0614: Unused import(s) DockerComposeServiceDefinition, DockerComposeNetworkDefinition, Optional, Required and TypedDict from wildcard import of OpenStudioLandscapes.engine.utils.docker.compose_dicts (unused-wildcard-import)
-src/OpenStudioLandscapes/Syncthing/assets.py:40:0: W0614: Unused import(s) GROUP, KEY and dist from wildcard import of OpenStudioLandscapes.Syncthing.constants (unused-wildcard-import)
+src/OpenStudioLandscapes/Syncthing/assets.py:111:0: C0116: Missing function or method docstring (missing-function-docstring)
+src/OpenStudioLandscapes/Syncthing/assets.py:156:0: C0112: Empty function docstring (empty-docstring)
+src/OpenStudioLandscapes/Syncthing/assets.py:156:0: R0914: Too many local variables (19/15) (too-many-locals)
+src/OpenStudioLandscapes/Syncthing/assets.py:300:0: C0116: Missing function or method docstring (missing-function-docstring)
 ************* Module OpenStudioLandscapes.Syncthing.definitions
 src/OpenStudioLandscapes/Syncthing/definitions.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+src/OpenStudioLandscapes/Syncthing/definitions.py:12:0: W1203: Use lazy % formatting in logging functions (logging-fstring-interpolation)
 ************* Module OpenStudioLandscapes.Syncthing.constants
 src/OpenStudioLandscapes/Syncthing/constants.py:7:1: W0511: Todo (fixme)
 src/OpenStudioLandscapes/Syncthing/constants.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 ************* Module OpenStudioLandscapes.Syncthing._definitions_with_upstream_specs
 src/OpenStudioLandscapes/Syncthing/_definitions_with_upstream_specs.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 ************* Module OpenStudioLandscapes.Syncthing.__init__
-src/OpenStudioLandscapes/Syncthing/__init__.py:6:5: W0511: TODO: Import directly (no need for conditional) when `python_requires = >= 3.8` (fixme)
+src/OpenStudioLandscapes/Syncthing/__init__.py:15:5: W0511: TODO: Import directly (no need for conditional) when `python_requires = >= 3.8` (fixme)
 ************* Module OpenStudioLandscapes.Syncthing
 src/OpenStudioLandscapes/Syncthing/__init__.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 src/OpenStudioLandscapes/Syncthing/__init__.py:1:0: C0103: Module name "Syncthing" doesn't conform to snake_case naming style (invalid-name)
-src/OpenStudioLandscapes/Syncthing/__init__.py:25:4: E0401: Unable to import 'OpenStudioLandscapes.engine.logging.loggers' (import-error)
-src/OpenStudioLandscapes/Syncthing/__init__.py:25:4: E0611: No name 'logging' in module 'OpenStudioLandscapes.engine' (no-name-in-module)
 ************* Module OpenStudioLandscapes.Syncthing.config.models
 src/OpenStudioLandscapes/Syncthing/config/models.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-src/OpenStudioLandscapes/Syncthing/config/models.py:13:0: C0115: Missing class docstring (missing-class-docstring)
-src/OpenStudioLandscapes/Syncthing/config/models.py:111:4: C0116: Missing function or method docstring (missing-function-docstring)
+src/OpenStudioLandscapes/Syncthing/config/models.py:17:0: C0115: Missing class docstring (missing-class-docstring)
+src/OpenStudioLandscapes/Syncthing/config/models.py:115:4: C0116: Missing function or method docstring (missing-function-docstring)
+src/OpenStudioLandscapes/Syncthing/config/models.py:116:8: W1203: Use lazy % formatting in logging functions (logging-fstring-interpolation)
+src/OpenStudioLandscapes/Syncthing/config/models.py:119:8: W1203: Use lazy % formatting in logging functions (logging-fstring-interpolation)
 src/OpenStudioLandscapes/Syncthing/config/models.py:5:0: C0411: third party import "pydantic.Field" should be placed before first party import "OpenStudioLandscapes.engine.config.models.FeatureBaseModel"  (wrong-import-order)
 src/OpenStudioLandscapes/Syncthing/config/models.py:10:0: C0412: Imports from package OpenStudioLandscapes are not grouped (ungrouped-imports)
 ************* Module OpenStudioLandscapes.Syncthing.doc.readme
@@ -52,5 +37,5 @@ src/OpenStudioLandscapes/Syncthing/doc/readme.py:19:0: C0116: Missing function o
 src/OpenStudioLandscapes/Syncthing/doc/readme.py:34:8: C2801: Unnecessarily calls dunder method __str__. Use str built-in function. (unnecessary-dunder-call)
 
 ------------------------------------------------------------------
-Your code has been rated at 6.53/10 (previous run: 6.23/10, +0.31)
+Your code has been rated at 8.07/10 (previous run: 7.32/10, +0.74)
 

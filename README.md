@@ -84,436 +84,147 @@ The following settings are available in `OpenStudioLandscapes-Syncthing` and are
 
 
 ```yaml
-# ===
-# env
-# ---
-#
-# Type: typing.Dict
-# Base Class Info:
-#     Required:
-#         False
-#     Description:
-#         None
-#     Default value:
-#         PydanticUndefined
-# Description:
-#     None
-# Required:
-#     False
-# Examples:
-#     None
+properties:
+  compose_scope:
+    default: default
+    examples:
+    - default
+    - license_server
+    - worker
+    title: Compose Scope
+    type: string
+  docker_compose:
+    default: '{DOT_LANDSCAPES}/{LANDSCAPE}/{FEATURE}/docker_compose/docker-compose.yml'
+    description: The path to the `docker-compose.yml` file.
+    format: path
+    title: Docker Compose
+    type: string
+  enabled:
+    default: true
+    description: Whether the Feature is enabled or not.
+    title: Enabled
+    type: boolean
+  env:
+    additionalProperties: true
+    title: Env
+    type: object
+  feature_name:
+    default: OpenStudioLandscapes-Syncthing
+    title: Feature Name
+    type: string
+  group_name:
+    default: OpenStudioLandscapes_Syncthing
+    title: Group Name
+    type: string
+  key_prefixes:
+    default:
+    - OpenStudioLandscapes_Syncthing
+    items:
+      type: string
+    title: Key Prefixes
+    type: array
+  local_bind_volumes:
+    description: Here you can define Feature specific, arbitrary, absolute bind volume
+      mappings.
+    items:
+      type: string
+    title: Local Bind Volumes
+    type: array
+  local_environment_variables:
+    additionalProperties:
+      type: string
+    description: Here you can define Feature specific, arbitrary environment variables.
+    title: Local Environment Variables
+    type: object
+  syncthing_config_dir:
+    default: '{DOT_LANDSCAPES}/{LANDSCAPE}/{FEATURE}/data/syncthing'
+    description: The path to the `docker-compose.yml` file.
+    format: path
+    title: Syncthing Config Dir
+    type: string
+  syncthing_discovery_port_container:
+    default: 21027
+    description: The Syncthing discovery container port.
+    exclusiveMinimum: 0
+    title: Syncthing Discovery Port Container
+    type: integer
+  syncthing_discovery_port_host:
+    default: 21027
+    description: The Syncthing discovery host port.
+    exclusiveMinimum: 0
+    title: Syncthing Discovery Port Host
+    type: integer
+  syncthing_image:
+    default: docker.io/syncthing/syncthing
+    description: The Syncthing Docker image.
+    title: Syncthing Image
+    type: string
+  syncthing_pcap:
+    default: ''
+    description: The Syncthing PCAP Environment Variable. To grant Syncthing additional
+      capabilities without running as root, use the PCAP environment variable with
+      the same syntax as that for setcap(8). For example, cap_chown,cap_fowner+ep.
+    title: Syncthing Pcap
+    type: string
+  syncthing_pgid:
+    default: 1000
+    description: The Syncthing Group ID.
+    title: Syncthing Pgid
+    type: integer
+  syncthing_port_container:
+    default: 8384
+    description: The Syncthing container port.
+    exclusiveMinimum: 0
+    title: Syncthing Port Container
+    type: integer
+  syncthing_port_host:
+    default: 8787
+    description: The Syncthing host port.
+    exclusiveMinimum: 0
+    title: Syncthing Port Host
+    type: integer
+  syncthing_puid:
+    default: 1000
+    description: The Syncthing User ID.
+    title: Syncthing Puid
+    type: integer
+  syncthing_stguiaddress:
+    default: ''
+    description: The Syncthing GUI Address.
+    title: Syncthing Stguiaddress
+    type: string
+  syncthing_tcp_port_container:
+    default: 22000
+    description: The Syncthing TCP container port.
+    exclusiveMinimum: 0
+    title: Syncthing Tcp Port Container
+    type: integer
+  syncthing_tcp_port_host:
+    default: 22000
+    description: The Syncthing TCP host port.
+    exclusiveMinimum: 0
+    title: Syncthing Tcp Port Host
+    type: integer
+  syncthing_udp_port_container:
+    default: 22000
+    description: The Syncthing UDP container port.
+    exclusiveMinimum: 0
+    title: Syncthing Udp Port Container
+    type: integer
+  syncthing_udp_port_host:
+    default: 22000
+    description: The Syncthing UDP host port.
+    exclusiveMinimum: 0
+    title: Syncthing Udp Port Host
+    type: integer
+  syncthing_umask:
+    default: '022'
+    description: The Syncthing UMASK Environment Variable.
+    title: Syncthing Umask
+    type: string
+title: Config
+type: object
 
-
-# ==================
-# local_bind_volumes
-# ------------------
-#
-# Type: typing.List[str]
-# Base Class Info:
-#     Required:
-#         False
-#     Description:
-#         Here you can define Feature specific, arbitrary, absolute bind volume mappings.
-#     Default value:
-#         PydanticUndefined
-# Description:
-#     Here you can define Feature specific, arbitrary, absolute bind volume mappings.
-# Required:
-#     False
-# Examples:
-#     None
-
-
-# ===========================
-# local_environment_variables
-# ---------------------------
-#
-# Type: typing.Dict[str, str]
-# Base Class Info:
-#     Required:
-#         False
-#     Description:
-#         Here you can define Feature specific, arbitrary environment variables.
-#     Default value:
-#         PydanticUndefined
-# Description:
-#     Here you can define Feature specific, arbitrary environment variables.
-# Required:
-#     False
-# Examples:
-#     None
-
-
-# =============
-# config_engine
-# -------------
-#
-# Type: <class 'OpenStudioLandscapes.engine.config.models.ConfigEngine'>
-# Base Class Info:
-#     Required:
-#         False
-#     Description:
-#         None
-#     Default value:
-#         None
-# Description:
-#     None
-# Required:
-#     False
-# Examples:
-#     None
-
-
-# ============
-# distribution
-# ------------
-#
-# Type: <class 'importlib.metadata.Distribution'>
-# Base Class Info:
-#     Required:
-#         False
-#     Description:
-#         None
-#     Default value:
-#         None
-# Description:
-#     None
-# Required:
-#     False
-# Examples:
-#     None
-
-
-# ==========
-# group_name
-# ----------
-#
-# Type: <class 'str'>
-# Base Class Info:
-#     Required:
-#         True
-#     Description:
-#         Dagster Group name. This will represent the group node name. See https://docs.dagster.io/api/dagster/assets for more information
-#     Default value:
-#         PydanticUndefined
-# Description:
-#     None
-# Required:
-#     False
-# Examples:
-#     None
-group_name: OpenStudioLandscapes_Syncthing
-
-
-# ============
-# key_prefixes
-# ------------
-#
-# Type: typing.List[str]
-# Base Class Info:
-#     Required:
-#         True
-#     Description:
-#         Dagster Asset key prefixes. This will be reflected in the nesting (directory structure) of the Asset. See https://docs.dagster.io/api/dagster/assets for more information
-#     Default value:
-#         PydanticUndefined
-# Description:
-#     None
-# Required:
-#     False
-# Examples:
-#     None
-key_prefixes:
-- OpenStudioLandscapes_Syncthing
-
-
-# =======
-# enabled
-# -------
-#
-# Type: <class 'bool'>
-# Base Class Info:
-#     Required:
-#         False
-#     Description:
-#         Whether the Feature is enabled or not.
-#     Default value:
-#         True
-# Description:
-#     Whether the Feature is enabled or not.
-# Required:
-#     False
-# Examples:
-#     None
-
-
-# =============
-# compose_scope
-# -------------
-#
-# Type: <class 'str'>
-# Base Class Info:
-#     Required:
-#         False
-#     Description:
-#         None
-#     Default value:
-#         default
-# Description:
-#     None
-# Required:
-#     False
-# Examples:
-#     ['default', 'license_server', 'worker']
-
-
-# ============
-# feature_name
-# ------------
-#
-# Type: <class 'str'>
-# Base Class Info:
-#     Required:
-#         True
-#     Description:
-#         The name of the feature. It is derived from the `OpenStudioLandscapes.<Feature>.dist` attribute.
-#     Default value:
-#         PydanticUndefined
-# Description:
-#     None
-# Required:
-#     False
-# Examples:
-#     None
-feature_name: OpenStudioLandscapes-Syncthing
-
-
-# ==============
-# docker_compose
-# --------------
-#
-# Type: <class 'pathlib.Path'>
-# Base Class Info:
-#     Required:
-#         False
-#     Description:
-#         The path to the `docker-compose.yml` file.
-#     Default value:
-#         {DOT_LANDSCAPES}/{LANDSCAPE}/{FEATURE}/docker_compose/docker-compose.yml
-# Description:
-#     The path to the `docker-compose.yml` file.
-# Required:
-#     False
-# Examples:
-#     None
-
-
-# ====================
-# syncthing_config_dir
-# --------------------
-#
-# Type: <class 'pathlib.Path'>
-# Description:
-#     The path to the `docker-compose.yml` file.
-# Required:
-#     False
-# Examples:
-#     None
-syncthing_config_dir: '{DOT_LANDSCAPES}/{LANDSCAPE}/{FEATURE}/data/syncthing'
-
-
-# ===================
-# syncthing_port_host
-# -------------------
-#
-# Type: <class 'int'>
-# Description:
-#     The Syncthing host port.
-# Required:
-#     False
-# Examples:
-#     None
-syncthing_port_host: 8787
-
-
-# ========================
-# syncthing_port_container
-# ------------------------
-#
-# Type: <class 'int'>
-# Description:
-#     The Syncthing container port.
-# Required:
-#     False
-# Examples:
-#     None
-syncthing_port_container: 8384
-
-
-# =======================
-# syncthing_tcp_port_host
-# -----------------------
-#
-# Type: <class 'int'>
-# Description:
-#     The Syncthing TCP host port.
-# Required:
-#     False
-# Examples:
-#     None
-syncthing_tcp_port_host: 22000
-
-
-# =======================
-# syncthing_udp_port_host
-# -----------------------
-#
-# Type: <class 'int'>
-# Description:
-#     The Syncthing UDP host port.
-# Required:
-#     False
-# Examples:
-#     None
-syncthing_udp_port_host: 22000
-
-
-# ============================
-# syncthing_tcp_port_container
-# ----------------------------
-#
-# Type: <class 'int'>
-# Description:
-#     The Syncthing TCP container port.
-# Required:
-#     False
-# Examples:
-#     None
-syncthing_tcp_port_container: 22000
-
-
-# ============================
-# syncthing_udp_port_container
-# ----------------------------
-#
-# Type: <class 'int'>
-# Description:
-#     The Syncthing UDP container port.
-# Required:
-#     False
-# Examples:
-#     None
-syncthing_udp_port_container: 22000
-
-
-# =============================
-# syncthing_discovery_port_host
-# -----------------------------
-#
-# Type: <class 'int'>
-# Description:
-#     The Syncthing discovery host port.
-# Required:
-#     False
-# Examples:
-#     None
-syncthing_discovery_port_host: 21027
-
-
-# ==================================
-# syncthing_discovery_port_container
-# ----------------------------------
-#
-# Type: <class 'int'>
-# Description:
-#     The Syncthing discovery container port.
-# Required:
-#     False
-# Examples:
-#     None
-syncthing_discovery_port_container: 21027
-
-
-# ===============
-# syncthing_image
-# ---------------
-#
-# Type: <class 'str'>
-# Description:
-#     The Syncthing Docker image.
-# Required:
-#     False
-# Examples:
-#     None
-syncthing_image: docker.io/syncthing/syncthing
-
-
-# ===============
-# syncthing_umask
-# ---------------
-#
-# Type: <class 'str'>
-# Description:
-#     The Syncthing UMASK Environment Variable.
-# Required:
-#     False
-# Examples:
-#     None
-syncthing_umask: '022'
-
-
-# ==============
-# syncthing_puid
-# --------------
-#
-# Type: <class 'int'>
-# Description:
-#     The Syncthing User ID.
-# Required:
-#     False
-# Examples:
-#     None
-syncthing_puid: 1000
-
-
-# ==============
-# syncthing_pgid
-# --------------
-#
-# Type: <class 'int'>
-# Description:
-#     The Syncthing Group ID.
-# Required:
-#     False
-# Examples:
-#     None
-syncthing_pgid: 1000
-
-
-# ==============
-# syncthing_pcap
-# --------------
-#
-# Type: <class 'str'>
-# Description:
-#     The Syncthing PCAP Environment Variable. To grant Syncthing additional capabilities without running as root, use the PCAP environment variable with the same syntax as that for setcap(8). For example, cap_chown,cap_fowner+ep.
-# Required:
-#     False
-# Examples:
-#     None
-
-
-# ======================
-# syncthing_stguiaddress
-# ----------------------
-#
-# Type: <class 'str'>
-# Description:
-#     The Syncthing GUI Address.
-# Required:
-#     False
-# Examples:
-#     None
 ```
 
 </details>
@@ -587,4 +298,4 @@ To follow up on the previous LinkedIn publications, visit:
 
 ***
 
-Last changed: **2026-04-28 14:33:25 UTC**
+Last changed: **2026-05-07 19:19:26 UTC**
