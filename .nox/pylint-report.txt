@@ -10,9 +10,6 @@ src/OpenStudioLandscapes/Syncthing/assets.py:300:0: C0116: Missing function or m
 ************* Module OpenStudioLandscapes.Syncthing.definitions
 src/OpenStudioLandscapes/Syncthing/definitions.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 src/OpenStudioLandscapes/Syncthing/definitions.py:12:0: W1203: Use lazy % formatting in logging functions (logging-fstring-interpolation)
-************* Module OpenStudioLandscapes.Syncthing.constants
-src/OpenStudioLandscapes/Syncthing/constants.py:7:1: W0511: Todo (fixme)
-src/OpenStudioLandscapes/Syncthing/constants.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 ************* Module OpenStudioLandscapes.Syncthing._definitions_with_upstream_specs
 src/OpenStudioLandscapes/Syncthing/_definitions_with_upstream_specs.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 ************* Module OpenStudioLandscapes.Syncthing.__init__
@@ -20,6 +17,7 @@ src/OpenStudioLandscapes/Syncthing/__init__.py:15:5: W0511: TODO: Import directl
 ************* Module OpenStudioLandscapes.Syncthing
 src/OpenStudioLandscapes/Syncthing/__init__.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 src/OpenStudioLandscapes/Syncthing/__init__.py:1:0: C0103: Module name "Syncthing" doesn't conform to snake_case naming style (invalid-name)
+src/OpenStudioLandscapes/Syncthing/__init__.py:39:4: C0103: Constant name "fill" doesn't conform to UPPER_CASE naming style (invalid-name)
 ************* Module OpenStudioLandscapes.Syncthing.config.models
 src/OpenStudioLandscapes/Syncthing/config/models.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 src/OpenStudioLandscapes/Syncthing/config/models.py:17:0: C0115: Missing class docstring (missing-class-docstring)
@@ -37,5 +35,5 @@ src/OpenStudioLandscapes/Syncthing/doc/readme.py:19:0: C0116: Missing function o
 src/OpenStudioLandscapes/Syncthing/doc/readme.py:34:8: C2801: Unnecessarily calls dunder method __str__. Use str built-in function. (unnecessary-dunder-call)
 
 ------------------------------------------------------------------
-Your code has been rated at 8.07/10 (previous run: 7.32/10, +0.74)
+Your code has been rated at 8.12/10 (previous run: 7.24/10, +0.88)
 

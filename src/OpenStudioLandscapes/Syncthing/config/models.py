@@ -8,9 +8,9 @@ from pydantic import (
 )
 
 from OpenStudioLandscapes.Syncthing import (
+    ASSET_HEADER,
     LOGGER,
     dist,
-    ASSET_HEADER,
 )
 
 
