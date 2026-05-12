@@ -84,146 +84,143 @@ The following settings are available in `OpenStudioLandscapes-Syncthing` and are
 
 
 ```yaml
-properties:
-  compose_scope:
-    default: default
-    examples:
-    - default
-    - license_server
-    - worker
-    title: Compose Scope
+compose_scope:
+  default: default
+  examples:
+  - default
+  - license_server
+  - worker
+  title: Compose Scope
+  type: string
+docker_compose:
+  default: '{DOT_LANDSCAPES}/{LANDSCAPE}/{FEATURE}/docker_compose/docker-compose.yml'
+  description: The path to the `docker-compose.yml` file.
+  format: path
+  title: Docker Compose
+  type: string
+enabled:
+  default: true
+  description: Whether the Feature is enabled or not.
+  title: Enabled
+  type: boolean
+env:
+  additionalProperties: true
+  title: Env
+  type: object
+feature_name:
+  default: OpenStudioLandscapes-Syncthing
+  title: Feature Name
+  type: string
+group_name:
+  default: OpenStudioLandscapes_Syncthing
+  title: Group Name
+  type: string
+key_prefixes:
+  default:
+  - OpenStudioLandscapes_Syncthing
+  items:
     type: string
-  docker_compose:
-    default: '{DOT_LANDSCAPES}/{LANDSCAPE}/{FEATURE}/docker_compose/docker-compose.yml'
-    description: The path to the `docker-compose.yml` file.
-    format: path
-    title: Docker Compose
+  title: Key Prefixes
+  type: array
+local_bind_volumes:
+  description: Here you can define Feature specific, arbitrary, absolute bind volume
+    mappings.
+  items:
     type: string
-  enabled:
-    default: true
-    description: Whether the Feature is enabled or not.
-    title: Enabled
-    type: boolean
-  env:
-    additionalProperties: true
-    title: Env
-    type: object
-  feature_name:
-    default: OpenStudioLandscapes-Syncthing
-    title: Feature Name
+  title: Local Bind Volumes
+  type: array
+local_environment_variables:
+  additionalProperties:
     type: string
-  group_name:
-    default: OpenStudioLandscapes_Syncthing
-    title: Group Name
-    type: string
-  key_prefixes:
-    default:
-    - OpenStudioLandscapes_Syncthing
-    items:
-      type: string
-    title: Key Prefixes
-    type: array
-  local_bind_volumes:
-    description: Here you can define Feature specific, arbitrary, absolute bind volume
-      mappings.
-    items:
-      type: string
-    title: Local Bind Volumes
-    type: array
-  local_environment_variables:
-    additionalProperties:
-      type: string
-    description: Here you can define Feature specific, arbitrary environment variables.
-    title: Local Environment Variables
-    type: object
-  syncthing_config_dir:
-    default: '{DOT_LANDSCAPES}/{LANDSCAPE}/{FEATURE}/data/syncthing'
-    description: The path to the `docker-compose.yml` file.
-    format: path
-    title: Syncthing Config Dir
-    type: string
-  syncthing_discovery_port_container:
-    default: 21027
-    description: The Syncthing discovery container port.
-    exclusiveMinimum: 0
-    title: Syncthing Discovery Port Container
-    type: integer
-  syncthing_discovery_port_host:
-    default: 21027
-    description: The Syncthing discovery host port.
-    exclusiveMinimum: 0
-    title: Syncthing Discovery Port Host
-    type: integer
-  syncthing_image:
-    default: docker.io/syncthing/syncthing
-    description: The Syncthing Docker image.
-    title: Syncthing Image
-    type: string
-  syncthing_pcap:
-    default: ''
-    description: The Syncthing PCAP Environment Variable. To grant Syncthing additional
-      capabilities without running as root, use the PCAP environment variable with
-      the same syntax as that for setcap(8). For example, cap_chown,cap_fowner+ep.
-    title: Syncthing Pcap
-    type: string
-  syncthing_pgid:
-    default: 1000
-    description: The Syncthing Group ID.
-    title: Syncthing Pgid
-    type: integer
-  syncthing_port_container:
-    default: 8384
-    description: The Syncthing container port.
-    exclusiveMinimum: 0
-    title: Syncthing Port Container
-    type: integer
-  syncthing_port_host:
-    default: 8787
-    description: The Syncthing host port.
-    exclusiveMinimum: 0
-    title: Syncthing Port Host
-    type: integer
-  syncthing_puid:
-    default: 1000
-    description: The Syncthing User ID.
-    title: Syncthing Puid
-    type: integer
-  syncthing_stguiaddress:
-    default: ''
-    description: The Syncthing GUI Address.
-    title: Syncthing Stguiaddress
-    type: string
-  syncthing_tcp_port_container:
-    default: 22000
-    description: The Syncthing TCP container port.
-    exclusiveMinimum: 0
-    title: Syncthing Tcp Port Container
-    type: integer
-  syncthing_tcp_port_host:
-    default: 22000
-    description: The Syncthing TCP host port.
-    exclusiveMinimum: 0
-    title: Syncthing Tcp Port Host
-    type: integer
-  syncthing_udp_port_container:
-    default: 22000
-    description: The Syncthing UDP container port.
-    exclusiveMinimum: 0
-    title: Syncthing Udp Port Container
-    type: integer
-  syncthing_udp_port_host:
-    default: 22000
-    description: The Syncthing UDP host port.
-    exclusiveMinimum: 0
-    title: Syncthing Udp Port Host
-    type: integer
-  syncthing_umask:
-    default: '022'
-    description: The Syncthing UMASK Environment Variable.
-    title: Syncthing Umask
-    type: string
-title: Config
-type: object
+  description: Here you can define Feature specific, arbitrary environment variables.
+  title: Local Environment Variables
+  type: object
+syncthing_config_dir:
+  default: '{DOT_LANDSCAPES}/{LANDSCAPE}/{FEATURE}/data/syncthing'
+  description: The path to the `docker-compose.yml` file.
+  format: path
+  title: Syncthing Config Dir
+  type: string
+syncthing_discovery_port_container:
+  default: 21027
+  description: The Syncthing discovery container port.
+  exclusiveMinimum: 0
+  title: Syncthing Discovery Port Container
+  type: integer
+syncthing_discovery_port_host:
+  default: 21027
+  description: The Syncthing discovery host port.
+  exclusiveMinimum: 0
+  title: Syncthing Discovery Port Host
+  type: integer
+syncthing_image:
+  default: docker.io/syncthing/syncthing
+  description: The Syncthing Docker image.
+  title: Syncthing Image
+  type: string
+syncthing_pcap:
+  default: ''
+  description: The Syncthing PCAP Environment Variable. To grant Syncthing additional
+    capabilities without running as root, use the PCAP environment variable with the
+    same syntax as that for setcap(8). For example, cap_chown,cap_fowner+ep.
+  title: Syncthing Pcap
+  type: string
+syncthing_pgid:
+  default: 1000
+  description: The Syncthing Group ID.
+  title: Syncthing Pgid
+  type: integer
+syncthing_port_container:
+  default: 8384
+  description: The Syncthing container port.
+  exclusiveMinimum: 0
+  title: Syncthing Port Container
+  type: integer
+syncthing_port_host:
+  default: 8787
+  description: The Syncthing host port.
+  exclusiveMinimum: 0
+  title: Syncthing Port Host
+  type: integer
+syncthing_puid:
+  default: 1000
+  description: The Syncthing User ID.
+  title: Syncthing Puid
+  type: integer
+syncthing_stguiaddress:
+  default: ''
+  description: The Syncthing GUI Address.
+  title: Syncthing Stguiaddress
+  type: string
+syncthing_tcp_port_container:
+  default: 22000
+  description: The Syncthing TCP container port.
+  exclusiveMinimum: 0
+  title: Syncthing Tcp Port Container
+  type: integer
+syncthing_tcp_port_host:
+  default: 22000
+  description: The Syncthing TCP host port.
+  exclusiveMinimum: 0
+  title: Syncthing Tcp Port Host
+  type: integer
+syncthing_udp_port_container:
+  default: 22000
+  description: The Syncthing UDP container port.
+  exclusiveMinimum: 0
+  title: Syncthing Udp Port Container
+  type: integer
+syncthing_udp_port_host:
+  default: 22000
+  description: The Syncthing UDP host port.
+  exclusiveMinimum: 0
+  title: Syncthing Udp Port Host
+  type: integer
+syncthing_umask:
+  default: '022'
+  description: The Syncthing UMASK Environment Variable.
+  title: Syncthing Umask
+  type: string
 
 ```
 
@@ -298,4 +295,4 @@ To follow up on the previous LinkedIn publications, visit:
 
 ***
 
-Last changed: **2026-05-09 11:20:01 UTC**
+Last changed: **2026-05-12 09:50:41 UTC**
