@@ -1,26 +1,26 @@
 import pathlib
 from typing import List
 
-from dagster import get_dagster_logger
+from OpenStudioLandscapes.engine.config.models import FeatureBaseModel
 from pydantic import (
     Field,
     PositiveInt,
 )
 
-LOGGER = get_dagster_logger(__name__)
-
-from OpenStudioLandscapes.engine.config.models import FeatureBaseModel
-
-from OpenStudioLandscapes.Syncthing import constants, dist
+from OpenStudioLandscapes.Syncthing import (
+    ASSET_HEADER,
+    LOGGER,
+    dist,
+)
 
 
 class Config(FeatureBaseModel):
 
     feature_name: str = dist.name
 
-    group_name: str = constants.ASSET_HEADER["group_name"]
+    group_name: str = ASSET_HEADER["group_name"]
 
-    key_prefixes: List[str] = constants.ASSET_HEADER["key_prefix"]
+    key_prefixes: List[str] = ASSET_HEADER["key_prefix"]
 
     syncthing_config_dir: pathlib.Path = Field(
         default=pathlib.Path("{DOT_LANDSCAPES}/{LANDSCAPE}/{FEATURE}/data/syncthing"),
@@ -130,4 +130,11 @@ class Config(FeatureBaseModel):
         return ret
 
 
-CONFIG_STR = Config.get_docs()
+if __name__ == "__main__":
+    CONFIG_STR = Config.get_docs()
+else:
+    import yaml
+
+    CONFIG_STR = yaml.dump(
+        Config.model_json_schema(mode="serialization"),
+    )

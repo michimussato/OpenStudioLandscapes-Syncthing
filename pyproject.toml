@@ -21,6 +21,7 @@ dependencies = [
     "docker-compose-graph @ git+https://github.com/michimussato/docker-compose-graph.git",
     "email-validator",
     "gitpython",
+    "ruamel.yaml",
     "snakemd",
 ]
 description = "Syncthing Feature for OpenStudioLandscapes"
@@ -49,26 +50,25 @@ graphviz = [
     "pipdeptree",
 ]
 lint = [
-    "OpenStudioLandscapes-Syncthing[optional-base]",
     "black",
     "isort",
     "pre-commit",
     "pylint",
 ]
-optional-base = [
-    "OpenStudioLandscapes @ git+https://github.com/michimussato/OpenStudioLandscapes.git",
-]
 pyproject = [
     "OpenStudioLandscapesUtil-VersionBumper @ git+https://github.com/michimussato/OpenStudioLandscapesUtil-VersionBumper.git",
 ]
 readme = [
-    "OpenStudioLandscapes-Syncthing[optional-base]",
     "OpenStudioLandscapesUtil-ReadmeGenerator @ git+https://github.com/michimussato/OpenStudioLandscapesUtil-ReadmeGenerator.git",
 ]
 sbom = [
     "OpenStudioLandscapes-Syncthing[graphviz]",
-    "OpenStudioLandscapes-Syncthing[optional-base]",
     "cyclonedx-bom",
+]
+testing = [
+    "pytest",
+    "pytest-cov",
+    "setuptools",
 ]
 
 [project.readme]

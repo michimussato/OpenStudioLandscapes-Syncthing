@@ -2,19 +2,12 @@ project:
   description: Syncthing Feature for OpenStudioLandscapes
   name: OpenStudioLandscapes-Syncthing
   optional-dependencies:
-    optional-base:
-    - OpenStudioLandscapes @ git+https://github.com/michimussato/OpenStudioLandscapes.git
     dev:
     - OpenStudioLandscapes-Syncthing[lint]
     - OpenStudioLandscapes-Syncthing[sbom]
     - OpenStudioLandscapes-Syncthing[readme]
-    lint:
-    - OpenStudioLandscapes-Syncthing[optional-base]
-    readme:
-    - OpenStudioLandscapes-Syncthing[optional-base]
     sbom:
     - OpenStudioLandscapes-Syncthing[graphviz]
-    - OpenStudioLandscapes-Syncthing[optional-base]
   urls:
     Homepage: https://github.com/michimussato/OpenStudioLandscapes-Syncthing
 tool:
