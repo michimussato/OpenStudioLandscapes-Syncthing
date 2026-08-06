@@ -24,7 +24,7 @@ from OpenStudioLandscapes.engine.common_assets import (
     group_in,
     group_out,
 )
-from OpenStudioLandscapes.engine.config.models import ConfigEngine
+from OpenStudioLandscapes.engine.env.configurable_resources.config_engine import ConfigEngineConfigurableResource
 from OpenStudioLandscapes.engine.constants import (
     ASSET_HEADER_BASE,
     ConfigParent,
@@ -155,14 +155,13 @@ def compose_networks(
 )
 def compose_syncthing(
     context: AssetExecutionContext,
+    config_ConfigEngineConfigurableResource: ConfigEngineConfigurableResource,
     CONFIG: config.models.Config,  # pylint: disable=redefined-outer-name
     compose_networks: Dict,  # pylint: disable=redefined-outer-name
 ) -> Generator[Output[Dict] | AssetMaterialization, None, None]:
     """ """
 
     env: Dict = CONFIG.env
-
-    config_engine: ConfigEngine = CONFIG.config_engine
 
     network_dict = {}
     ports_dict = {}
@@ -217,7 +216,7 @@ def compose_syncthing(
         "volumes": list(
             {
                 *_volume_relative,
-                *config_engine.global_bind_volumes,
+                *config_ConfigEngineConfigurableResource.global_bind_volumes,
                 *CONFIG.local_bind_volumes,
             }
         )
@@ -228,7 +227,7 @@ def compose_syncthing(
         context=context,
         service_name=service_name,
         landscape_id=env.get("LANDSCAPE", "default"),
-        domain_lan=config_engine.openstudiolandscapes__domain_lan,
+        domain_lan=config_ConfigEngineConfigurableResource.openstudiolandscapes__domain_lan,
     )
     # container_name = "--".join([service_name, env.get("LANDSCAPE", "default")])
     # host_name = ".".join(
@@ -240,7 +239,7 @@ def compose_syncthing(
             service_name: {
                 "container_name": container_name,
                 "hostname": host_name,
-                "domainname": config_engine.openstudiolandscapes__domain_lan,
+                "domainname": config_ConfigEngineConfigurableResource.openstudiolandscapes__domain_lan,
                 "image": CONFIG.syncthing_image,
                 "restart": DockerComposePolicies.RESTART_POLICY.UNLESS_STOPPED.value,
                 # https://www.man7.org/linux/man-pages/man7/capabilities.7.html
@@ -253,13 +252,13 @@ def compose_syncthing(
                 #     "CAP_FOWNER",
                 # ],
                 "environment": {
-                    "TZ": config_engine.tz,
+                    "TZ": config_ConfigEngineConfigurableResource.tz,
                     "UMASK": str(CONFIG.syncthing_umask),
                     "PUID": str(CONFIG.syncthing_puid),
                     "PGID": str(CONFIG.syncthing_pgid),
                     "PCAP": str(CONFIG.syncthing_pcap),
                     "STGUIADDRESS": CONFIG.syncthing_stguiaddress,
-                    **config_engine.global_environment_variables,
+                    **config_ConfigEngineConfigurableResource.global_environment_variables,
                     **CONFIG.local_environment_variables,
                 },
                 # Todo
