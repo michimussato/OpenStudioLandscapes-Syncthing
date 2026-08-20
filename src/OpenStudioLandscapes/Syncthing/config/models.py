@@ -7,7 +7,7 @@ from pydantic import (
     PositiveInt,
 )
 
-from OpenStudioLandscapes.Syncthing import (
+from OpenStudioLandscapes.Syncthing.constants import (
     ASSET_HEADER,
     LOGGER,
     dist,
