@@ -4,7 +4,7 @@ from dagster import (
 )
 
 import OpenStudioLandscapes.Syncthing.assets
-from OpenStudioLandscapes.Syncthing import (
+from OpenStudioLandscapes.Syncthing.constants import (
     LOGGER,
     dist,
 )
