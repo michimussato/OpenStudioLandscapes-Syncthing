@@ -40,11 +40,11 @@ from OpenStudioLandscapes.engine.utils.docker.compose_dicts import (
     get_network_dicts,
 )
 
+from OpenStudioLandscapes.Syncthing.config import models
 from OpenStudioLandscapes.Syncthing.constants import (
     ASSET_HEADER,
     dist,
 )
-from OpenStudioLandscapes.Syncthing.config import models
 
 # https://github.com/yaml/pyyaml/issues/722#issuecomment-1969292770
 yaml.SafeDumper.add_multi_representer(
